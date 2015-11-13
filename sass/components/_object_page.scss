@@ -1,0 +1,23 @@
+
+fieldset.islandora-metadata{
+  border: none;
+  dd{
+    p{
+      margin-top: 0em;
+      margin-bottom: 0em;
+    }
+  }
+  dt{
+    text-align: left;
+  }
+  legend{
+    background-color: #dddddd;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #666666;
+    span{
+      padding-left: 30px;
+      background-position: 15px 65%;
+    }
+  }
+}
