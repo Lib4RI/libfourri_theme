@@ -1,0 +1,53 @@
+/**
+* Styles for all elements found in the footer of the site.
+**/
+
+footer{
+  border-top: 10px solid grey;
+
+  .inner-footer-wrapper{
+    display: table;
+    width: 100%;
+
+    div:first-child{
+      display: table-cell;
+      vertical-align: middle;
+      ul.menu{
+        margin-top: 0;
+        margin-bottom: 0;
+        li{
+          display: inline-block;
+          list-style-type: none;
+          list-style-image: none;
+          border-right: 1px solid black;
+          a{
+            padding-right: 10px;
+            padding-bottom: 5px;
+            text-decoration: none;
+          }
+        }
+        li:last-child{
+          border-right: none;
+        }
+      }
+    }
+
+    div:last-child{
+      display: table;
+      vertical-align: middle;
+      float: right;
+      .block__title.block-title {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 12px;
+        padding-right: 10px;
+      }
+      .view-footer-logo{
+        display: inline;
+        img{
+          max-width: 10em;
+        }
+      }
+    }
+  }
+}

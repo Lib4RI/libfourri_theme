@@ -1,0 +1,70 @@
+/**
+* Styles for all elements found in facets.
+**/
+
+.islandora-solr-facet-wrapper{
+  a{
+    text-decoration: none;
+  }
+  h3{
+    margin-bottom: 0.22em;
+    border-bottom: 1px solid #666666;
+  }
+  ul{
+    margin-top: 0.22em;
+  }
+  .islandora-solr-date-filter{
+    label{
+      float: none;
+      width: auto;
+    }
+  }
+  .form-item.form-type-textfield.form-item-date-filter-date-filter-from, .form-item.form-type-textfield.form-item-date-filter-date-filter-to{
+    display: table;
+    width: 100%;
+    label{
+      display: table-cell;
+      min-width: 30%;
+    }
+    input{
+      display: table-cell;
+      width: 100%;
+    }
+  }
+  .islandora-solr-facet {
+    span.plusminus {
+      float: left;
+      padding-right: 10px;
+      a.plus{
+        display: none;
+      }
+      a.minus{
+        background: image-url("bullet-facet.png") left center no-repeat;
+        padding-left:10px;
+        height:25px;
+        width:25px;
+        text-decoration: none;
+        color: transparent;
+        vertical-align:text-center;
+      }
+    }
+    li {
+      list-style-image: none;
+      list-style: none;
+      span{
+        color: #999999;
+      }
+    }
+  }
+  .range-slider-button-wrapper, .date-filter-button-wrapper{
+    text-align: right;
+    input{
+      background-color: #dddddd;
+      color: black;
+      border: none;
+    }
+  }
+}
+.block ul.islandora-solr-facet{
+  padding-left: 0px;
+}

@@ -1,0 +1,27 @@
+/**
+* Styling and layout for the Recent Additions View.
+**/
+
+.view-recent-additions, dl.islandora-object{
+  .views-row{
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.fa-unlock-alt{
+  color: #009e0f;
+}
+.fa-lock{
+  color: #666666;
+}
+.published-accepted-links {
+  display: inline;
+  float: right;
+  i, a{
+    padding-right:10px;
+    text-decoration: none;
+  }
+}

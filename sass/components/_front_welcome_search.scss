@@ -1,0 +1,39 @@
+/**
+ * Front welcome and search block styling.
+ */
+
+.front{
+  #islandora-solr-simple-search-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    width: 100%;
+    .form-item-islandora-simple-search-query input{
+      width: 100%;
+      padding-left: 30px;
+      line-height: 2em;
+      border: 1px solid grey;
+      border-radius: 3px;
+    }
+    .form-submit {
+      float: left;
+      margin-bottom: 20px;
+      margin-top: -31px;
+      margin-left: 3px;
+      position: relative;
+      background: image-url("magnifying.png");
+      background-repeat: no-repeat;
+      background-position: 2px 2px;
+      width: 26px;
+      height: 26px;
+      border: 0;
+      text-indent: -9999px;
+    }
+    .adv-search-lnk{
+      float: right;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+/**
+* Styles for all elements found in the header of the site.
+**/
+
+header{
+  border-bottom: 10px solid grey;
+  .header-inner-wrapper{
+    display: table;
+    width: 100%;
+    .logo-wrapper{
+      vertical-align: middle;
+      display: table-cell;
+    }
+
+    .header-menus-wrapper{
+      vertical-align: middle;
+      display: table-cell;
+    }
+
+    .header__region{
+      vertical-align: middle;
+      display: table-cell;
+      text-align: right;
+      .block{
+        margin-bottom: 0.5em;
+      }
+      .block-islandora-solr{
+        margin-bottom: 0.5em;
+      }
+      ul.menu{
+        margin-bottom: 0.5em;
+        li{
+          display: inline-block;
+          list-style-type: none;
+          list-style-image: none;
+          border-right: 1px solid black;
+          a{
+            padding-right: 10px;
+            padding-bottom: 5px;
+            text-decoration: none;
+          }
+        }
+        li:last-child{
+          border-right: none;
+        }
+      }
+      #edit-simple {
+        .adv_search{
+          text-decoration: none;
+        }
+        >div{
+          display: block;
+        }
+        .form-type-textfield{
+          margin-top: 0.5em;
+        }
+        .form-item{
+          margin-bottom: 0em;
+        }
+        input.form-text{
+          width: 100%;
+          padding-left: 30px;
+          line-height: 2em;
+          border: 1px solid grey;
+          border-radius: 3px;
+        }
+        input.form-submit {
+          position: absolute;
+          left: 0;
+          top: 4px;
+          margin-bottom: 0px;
+          margin-top: 0px;
+          margin-left: 3px;
+          background: image-url("magnifying.png");
+          background-repeat: no-repeat;
+          background-position: 2px 2px;
+          width: 26px;
+          height: 26px;
+          border: 0;
+          text-indent: -9999px;
+        }
+      }
+    }
+
+  }
+}
