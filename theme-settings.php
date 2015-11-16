@@ -25,6 +25,38 @@ function libfourri_theme_form_system_theme_settings_alter(&$form, &$form_state, 
     '#default_value' => theme_get_setting('lib4ri_theme_search_text'),
     '#description' => t("The search text to appear in the simple search box on the front page."),
   );
+
+  $form['lib4ri_theme_custom']['lib4ri_theme_bib_accepted'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Accepted citation class.'),
+    '#default_value' => theme_get_setting('lib4ri_theme_bib_accepted'),
+    '#description' => t("Set the Font-Awesome class to use as an icon for an accepted version."),
+  );
+  $form['lib4ri_theme_custom']['lib4ri_theme_bib_updated'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Updated citation class.'),
+    '#default_value' => theme_get_setting('lib4ri_theme_bib_updated'),
+    '#description' => t("Set the Font-Awesome class to use as an icon for an updated version."),
+  );
+  $form['lib4ri_theme_custom']['lib4ri_theme_bib_published'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Published citation class.'),
+    '#default_value' => theme_get_setting('lib4ri_theme_bib_published'),
+    '#description' => t("Set the Font-Awesome class to use as an icon for a Published version."),
+  );
+  $form['lib4ri_theme_custom']['lib4ri_theme_bib_supplemental'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Supplemental citation class.'),
+    '#default_value' => theme_get_setting('lib4ri_theme_bib_supplemental'),
+    '#description' => t("Set the Font-Awesome class to use as an icon for a Supplemental version."),
+  );
+  $form['lib4ri_theme_custom']['lib4ri_theme_bib_unspecified'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Unspecified citation class.'),
+    '#default_value' => theme_get_setting('lib4ri_theme_bib_unspecified'),
+    '#description' => t("Set the Font-Awesome class to use as an icon for an Unspecified version."),
+  );
+
   $form['lib4ri_theme_custom']['lib4ri_theme_omit_extended_collection_meta'] = array(
     '#type' => 'select',
     '#title' => t('Omit collections specific metadata.'),

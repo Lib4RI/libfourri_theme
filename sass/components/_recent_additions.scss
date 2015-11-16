@@ -1,0 +1,21 @@
+/**
+* Styles for recent additions block.
+**/
+
+.lib4ri-citation-solr-results-citation{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+  .bib-detail-record {
+    display: inline-block;
+  }
+  .bib-versions {
+    display: inline-block;
+    float: right;
+    span{
+      a{
+        padding-left: 5px;
+      }
+    }
+  }
+}

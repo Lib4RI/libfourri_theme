@@ -2072,38 +2072,6 @@ footer .inner-footer-wrapper div:last-child .view-footer-logo img {
 }
 
 /**
-* Styling and layout for the Recent Additions View.
-**/
-/* line 6, ../sass/components/views/_view_recent_additions.scss */
-.view-recent-additions .views-row, dl.islandora-object .views-row {
-  border-bottom: 1px solid black;
-  box-sizing: border-box;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-/* line 14, ../sass/components/views/_view_recent_additions.scss */
-.fa-unlock-alt {
-  color: #009e0f;
-}
-
-/* line 17, ../sass/components/views/_view_recent_additions.scss */
-.fa-lock {
-  color: #666666;
-}
-
-/* line 20, ../sass/components/views/_view_recent_additions.scss */
-.published-accepted-links {
-  display: inline;
-  float: right;
-}
-/* line 23, ../sass/components/views/_view_recent_additions.scss */
-.published-accepted-links i, .published-accepted-links a {
-  padding-right: 10px;
-  text-decoration: none;
-}
-
-/**
 * Styles for all elements found in the header of the site.
 **/
 /* line 5, ../sass/components/_collection_page.scss */
@@ -2457,6 +2425,37 @@ fieldset.islandora-metadata legend span {
   text-decoration: none;
   color: transparent;
   vertical-align: text-center;
+}
+
+/**
+* Styles for recent additions block.
+**/
+/* line 5, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+/* line 9, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation .bib-detail-record {
+  display: inline-block;
+}
+/* line 12, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation .bib-versions {
+  display: inline-block;
+  float: right;
+}
+/* line 16, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation .bib-versions span a {
+  padding-left: 5px;
+}
+
+/**
+* Styles for organizatinal units block.
+**/
+/* line 7, ../sass/components/_organizational_unit.scss */
+#block-lib4ridora-lib4ridora-organizational-units li span {
+  color: #999999;
 }
 
 /**

@@ -135,6 +135,25 @@ function libfourri_theme_preprocess_islandora_objects_subset(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess().
+ */
+function libfourri_theme_preprocess_lib4ridora_citation_solr_results(&$variables) {
+
+  $versions = array(
+    'accepted version' => theme_get_setting('lib4ri_theme_bib_accepted'),
+    'updated version' => theme_get_setting('lib4ri_theme_bib_updated'),
+    'published version' => theme_get_setting('lib4ri_theme_bib_published'),
+    'supplemental material' => theme_get_setting('lib4ri_theme_bib_supplemental'),
+    'unspecified' => theme_get_setting('lib4ri_theme_bib_unspecified')
+  );
+  foreach ($variables['citations'] as &$citation) {
+    foreach ($citation['pdfs'] as $key => &$value) {
+      $value['classes'] = isset($versions[$value['version']]) ? $versions[$value['version']] : "";
+    }
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function libfourri_theme_form_islandora_solr_range_slider_form_alter(&$form, &$form_state, $form_id) {
