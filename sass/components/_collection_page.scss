@@ -83,6 +83,9 @@
   }
 }
 
+.islandora-solr-search-result{
+  margin-bottom: .2em;
+}
 dl.islandora-object{
   margin-bottom: 0;
 }
@@ -94,9 +97,9 @@ dt.islandora-object-thumb {
   margin-left: 50px;
 }
 
-.islandora-objects-list-item{
-  border-bottom: 1px solid #666666;
-}
+/* .islandora-objects-list-item{ */
+/*   border-bottom: 1px solid #666666; */
+/* } */
 
 .secondary-display-rss{
   margin-top: 3px;
@@ -146,4 +149,12 @@ dl.solr-thumb{
 
 .islandora-inline-metadata dd{
   padding-left: 0px;
+}
+
+.solr-thumb, .solr-label, .solr-value {
+  display: inline-block;
+}
+
+.solr-thumb.islandora-object-thumb {
+  padding-left: 11px;
 }

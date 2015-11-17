@@ -19,30 +19,37 @@
       <!-- Search result -->
       <div class="islandora-solr-search-result clear-block <?php print $row_result % 2 == 0 ? 'odd' : 'even'; ?>">
         <div class="islandora-solr-search-result-inner islandora-objects-list-item">
-          <!-- Thumbnail -->
-          <dl class="solr-thumb islandora-object-thumb">
-            <dt class="">
-              <input type="checkbox" class="islandora-list-item-select">
-            </dt>
-          </dl>
           <!-- Metadata -->
-          <dl class="solr-fields islandora-inline-metadata">
+          <div class="solr-fields islandora-inline-metadata">
+            <div class="solr-thumb islandora-object-thumb">
+              <input type="checkbox" class="islandora-list-item-select">
+            </div>
             <?php foreach($result['solr_doc'] as $key => $value): ?>
-              <dt class="solr-label element-invisible <?php print $value['class']; ?>">
+              <div class="solr-label <?php print $value['class']; ?>">
                 <?php print $value['label']; ?>
-              </dt>
-              <dd class="solr-value <?php print $value['class']; ?>">
+              </div>
+              <div class="solr-value <?php print $value['class']; ?>">
                 <?php print $value['value']; ?>
-              </dd>
+              </div>
             <?php endforeach; ?>
              <div class="object-list-lock-wrapper">
-              <?php print l("Detailed Record", $result['object_url']);?>
-              <div class="published-accepted-links">
-                <span class="fa fa-lock"><?php print l("Published Version", "islandora/object/islandora:root");?></span>
-                <span class="fa fa-unlock-alt"><?php print l("Accepted Version", "islandora/object/islandora:root");?></span>
-              </div>
+               <div id="lib4ridora-citation-solr-results">
+                 <div class="lib4ri-citation-solr-results-citation">
+                 <?php print $result['citations']['citation']; ?>
+                   <div class="bib-detail-record">
+                     <div>
+                     <?php $cit_pid = $result['citations']['pid']; print l("Detailed Record", "/islandora/object/$cit_pid"); ?>
+                     </div>
+                   </div>
+                   <div class="bib-versions">
+                   <?php foreach ($result['citations']['pdfs'] as $pdf): ?>
+                     <span id="<?php print $pdf['id']; ?>" class="<?php print $pdf['classes']; ?>"><?php print l(ucwords($pdf['version']), "/islandora/object/{$result['citations']['pid']}/datastream/{$pdf['dsid']}/view"); ?></span>
+                   <?php endforeach; ?>
+                   </div>
+                 </div>
+               </div>
              </div>
-          </dl>
+          </div>
         </div>
       </div>
     <?php $row_result++; ?>

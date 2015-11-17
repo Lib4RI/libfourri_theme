@@ -18,7 +18,6 @@
  * @see template_preprocess_islandora_solr_wrapper()
  */
 ?>
-
 <div id="islandora-solr-top">
 
   <div class="object-sort-show-wrapper">
@@ -44,7 +43,17 @@
       <?php print $solr_pager; ?>
     </div>
     <div class="object-mock-icons">
-      <?php print $secondary_profiles; ?>
+      <?php
+        // Check to see if the secondary profile includes an rss link and if it does
+        // add &citation=true to the end of the url.
+        $delimiter = "solr_profile=rss";
+        $pieces = explode($delimiter, $secondary_profiles);
+        if (count($pieces) > 1) {
+          $pieces[0] = $pieces[0].$delimiter."&amp;citation=true";
+          $secondary_profiles = implode("",$pieces);
+        }
+        print $secondary_profiles;
+      ?>
     </div>
   </div>
 

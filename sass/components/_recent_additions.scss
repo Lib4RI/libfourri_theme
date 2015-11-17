@@ -3,9 +3,6 @@
 **/
 
 .lib4ri-citation-solr-results-citation{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid grey;
   .bib-detail-record {
     display: inline-block;
   }
@@ -18,4 +15,10 @@
       }
     }
   }
+}
+
+.front .lib4ri-citation-solr-results-citation{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
 }

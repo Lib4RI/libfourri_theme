@@ -8,6 +8,8 @@
 
 <div class="islandora-objects-list">
   <?php $row_field = 0; ?>
+  <?php dsm($objects, "objs");?>
+  <?php $vv = get_defined_vars(); dsm($vv, "vv");?>
   <?php foreach($objects as $object): ?>
     <?php $first = ($row_field == 0) ? 'first' : ''; ?>
     <div class="islandora-objects-list-item clearfix">

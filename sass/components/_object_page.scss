@@ -21,3 +21,16 @@ fieldset.islandora-metadata{
     }
   }
 }
+
+
+.islandora-solr-search-results{
+  .islandora-solr-search-result{
+    border-bottom: 1px solid grey;
+    .csl-bib-body {
+      padding-left: 35px;
+    }
+    .object-list-lock-wrapper{
+      padding-top: 5px;
+    }
+  }
+}
