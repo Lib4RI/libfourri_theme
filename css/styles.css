@@ -1960,6 +1960,11 @@ header .header-inner-wrapper .header__region #edit-simple input.form-submit {
   text-indent: -9999px;
 }
 
+/* line 88, ../sass/components/_header.scss */
+#block-islandora-solr-simple {
+  position: relative;
+}
+
 /**
 * Styles for all elements found in the footer of the site.
 **/
@@ -2512,6 +2517,12 @@ fieldset.islandora-metadata legend span {
   padding-top: 5px;
   padding-bottom: 5px;
   border-bottom: 1px solid grey;
+}
+
+/* line 26, ../sass/components/_recent_additions.scss */
+.csl-bib-body div {
+  padding-left: 0 !important;
+  text-indent: 0 !important;
 }
 
 /**
