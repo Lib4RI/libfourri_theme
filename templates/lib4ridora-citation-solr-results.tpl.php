@@ -18,9 +18,10 @@
   <?php foreach ($citations as $citation): ?>
   <div class="lib4ri-citation-solr-results-citation">
     <?php print $citation['citation']; ?>
-    <div class="bib-detail-record"><div><?php $cit_pid = $citation['pid']; print l("Detailed Record", "/islandora/object/$cit_pid"); ?></div></div>
+    <div class="bib-detail-record"><div><?php $cit_pid = $citation['pid']; print l(t("Detailed Record"), "/islandora/object/$cit_pid"); ?></div></div>
     <div class="bib-versions">
     <?php foreach ($citation['pdfs'] as $pdf): ?>
+
     <span id="<?php print $pdf['id']; ?>" class="<?php print $pdf['classes']; ?>"><?php print l(ucwords($pdf['version']), "/islandora/object/{$citation['pid']}/datastream/{$pdf['dsid']}/view"); ?></span>
     <?php endforeach; ?>
     </div>

@@ -2330,6 +2330,11 @@ fieldset.islandora-metadata legend span {
   padding-top: 5px;
 }
 
+/* line 38, ../sass/components/_object_page.scss */
+.islandora-metadata dt, .islandora-metadata dd {
+  border: none;
+}
+
 /**
 * Styles for all elements found in facets.
 **/
