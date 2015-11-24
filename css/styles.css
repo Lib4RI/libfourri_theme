@@ -2534,6 +2534,31 @@ fieldset.islandora-metadata legend span {
 }
 
 /**
+* Styling for the Views Links block.
+**/
+/* line 5, ../sass/components/views/_view_links.scss */
+.view-publication-links {
+  padding-left: .75em;
+}
+/* line 7, ../sass/components/views/_view_links.scss */
+.view-publication-links .views-field {
+  padding-bottom: .5em;
+}
+/* line 9, ../sass/components/views/_view_links.scss */
+.view-publication-links .views-field span {
+  background: url('../images/launch-2.png?1448395510');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+}
+/* line 16, ../sass/components/views/_view_links.scss */
+.view-publication-links .views-field span a {
+  padding-left: 1.5em;
+}
+
+/**
  * @file
  * Print styling
  *
