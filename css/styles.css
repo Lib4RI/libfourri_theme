@@ -2534,18 +2534,15 @@ fieldset.islandora-metadata legend span {
 }
 
 /**
-* Styling for the Views Links block.
+* Styling for Lib4ri Citation Blocks View Links.
 **/
-/* line 5, ../sass/components/views/_view_links.scss */
-.view-publication-links {
+/* line 6, ../sass/components/views/_block_data_links.scss */
+.view-publication-links .views-field, .view-publication-links div.libfourri-research-data, #block-lib4ridora-lib4ridora-related-research .views-field, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data {
   padding-left: .75em;
-}
-/* line 7, ../sass/components/views/_view_links.scss */
-.view-publication-links .views-field {
   padding-bottom: .5em;
 }
-/* line 9, ../sass/components/views/_view_links.scss */
-.view-publication-links .views-field span {
+/* line 9, ../sass/components/views/_block_data_links.scss */
+.view-publication-links .views-field span, .view-publication-links div.libfourri-research-data span, #block-lib4ridora-lib4ridora-related-research .views-field span, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span {
   background: url('../images/launch-2.png?1448395510');
   background-repeat: no-repeat;
   background-position: 0px 0px;
@@ -2553,8 +2550,8 @@ fieldset.islandora-metadata legend span {
   width: 20px;
   height: 20px;
 }
-/* line 16, ../sass/components/views/_view_links.scss */
-.view-publication-links .views-field span a {
+/* line 16, ../sass/components/views/_block_data_links.scss */
+.view-publication-links .views-field span a, .view-publication-links div.libfourri-research-data span a, #block-lib4ridora-lib4ridora-related-research .views-field span a, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span a {
   padding-left: 1.5em;
 }
 
