@@ -1,0 +1,21 @@
+/**
+* Styling for the Views Links block.
+**/
+
+.view-publication-links {
+  padding-left: .75em;
+  .views-field{
+    padding-bottom: .5em;
+    span {
+      background: image-url("launch-2.png");
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      a {
+        padding-left: 1.5em;
+      }
+    }
+  }
+}
