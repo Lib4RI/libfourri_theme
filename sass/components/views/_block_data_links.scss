@@ -1,10 +1,10 @@
 /**
-* Styling for the Views Links block.
+* Styling for Lib4ri Citation Blocks View Links.
 **/
 
-.view-publication-links {
-  padding-left: .75em;
-  .views-field{
+.view-publication-links, #block-lib4ridora-lib4ridora-related-research{
+  .views-field, div.libfourri-research-data{
+    padding-left: .75em;
     padding-bottom: .5em;
     span {
       background: image-url("launch-2.png");
