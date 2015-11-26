@@ -16,12 +16,11 @@ fieldset.islandora-metadata{
     width: 100%;
     border: 1px solid #666666;
     span{
-      padding-left: 30px;
+      padding-left: 0px;
       background-position: 15px 65%;
     }
   }
 }
-
 
 .islandora-solr-search-results{
   .islandora-solr-search-result{
@@ -37,4 +36,22 @@ fieldset.islandora-metadata{
 
 .islandora-metadata dt, .islandora-metadata dd {
   border: none;
+}
+
+.ir_citationCModel{
+  div.form-item {
+    display: table;
+    width: 100%;
+    label{
+      display: table-cell;
+      width: 20.625%;
+    }
+    div.csl-bib-body, a{
+      display: table-cell;
+    }
+  }
+  fieldset{
+    padding-left: 0em;
+    padding-right: 0em;
+  }
 }

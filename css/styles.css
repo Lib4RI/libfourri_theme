@@ -2318,26 +2318,46 @@ fieldset.islandora-metadata legend {
 }
 /* line 18, ../sass/components/_object_page.scss */
 fieldset.islandora-metadata legend span {
-  padding-left: 30px;
+  padding-left: 0px;
   background-position: 15px 65%;
 }
 
-/* line 27, ../sass/components/_object_page.scss */
+/* line 26, ../sass/components/_object_page.scss */
 .islandora-solr-search-results .islandora-solr-search-result {
   border-bottom: 1px solid grey;
 }
-/* line 29, ../sass/components/_object_page.scss */
+/* line 28, ../sass/components/_object_page.scss */
 .islandora-solr-search-results .islandora-solr-search-result .csl-bib-body {
   padding-left: 35px;
 }
-/* line 32, ../sass/components/_object_page.scss */
+/* line 31, ../sass/components/_object_page.scss */
 .islandora-solr-search-results .islandora-solr-search-result .object-list-lock-wrapper {
   padding-top: 5px;
 }
 
-/* line 38, ../sass/components/_object_page.scss */
+/* line 37, ../sass/components/_object_page.scss */
 .islandora-metadata dt, .islandora-metadata dd {
   border: none;
+}
+
+/* line 42, ../sass/components/_object_page.scss */
+.ir_citationCModel div.form-item {
+  display: table;
+  width: 100%;
+}
+/* line 45, ../sass/components/_object_page.scss */
+.ir_citationCModel div.form-item label {
+  display: table-cell;
+  width: 20.625%;
+}
+/* line 49, ../sass/components/_object_page.scss */
+.ir_citationCModel div.form-item div.csl-bib-body, .ir_citationCModel div.form-item a {
+  display: table-cell;
+}
+/* line 53, ../sass/components/_object_page.scss */
+.ir_citationCModel fieldset {
+  padding-left: 0em;
+  padding-right: 0em;
 }
 
 /**
