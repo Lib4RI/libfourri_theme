@@ -131,74 +131,11 @@ function libfourri_theme_preprocess_islandora_solr(&$variables) {
   libfourri_theme_citations_for_search_results($variables['results']);
 }
 
-function libfourri_theme_citations_for_search_results(&$results) {
-  $items = array();
-  $versions = libfourri_theme_get_accepted_version_types();
-  $style = citeproc_default_style();
-  foreach ($results as &$item) {
-    $object = islandora_object_load($item['PID']);
-    if ($object) {
-      // Render the citation.
-      $mods = islandora_bibliography_get_mods($object->id);
-      $entry = citeproc_bibliography_from_mods($style, $mods);
-      // Get the info for the PDFs.
-      $datastreams = iterator_to_array($object);
-      $pdf_datastreams = array_filter($datastreams, 'lib4ridora_multi_embargo_pdf_filter');
-      $pdfs = array();
-      foreach ($pdf_datastreams as $pdf_datastream) {
-        if (!islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $pdf_datastream)) {
-          continue;
-        }
-        $version = $pdf_datastream->relationships->get(ISLANDORA_RELS_INT_URI, 'lib4ridora-multi-embargo-document_version');
-        $version = array_shift($version);
-        if (!is_null($version)) {
-          $pdfs[] = array(
-            'dsid' => $pdf_datastream->id,
-            'version' => $version['object']['value'],
-            'id' => 'lib4ri-citation-' . str_replace(' ', '-', $version['object']['value']),
-          );
-        }
-      }
-      $item['citations'] = array(
-        'citation' => $entry,
-        'pid' => $object->id,
-        'pdfs' => $pdfs,
-      );
-      foreach ($item['citations']['pdfs'] as $key => &$value) {
-        $value['classes'] = isset($versions[$value['version']]) ? $versions[$value['version']] : "";
-      }
-    }
-  }
-  return $items;
-}
-
-function libfourri_theme_get_accepted_version_types() {
-  return array(
-    'accepted version' => theme_get_setting('lib4ri_theme_bib_accepted'),
-    'updated version' => theme_get_setting('lib4ri_theme_bib_updated'),
-    'published version' => theme_get_setting('lib4ri_theme_bib_published'),
-    'supplemental material' => theme_get_setting('lib4ri_theme_bib_supplemental'),
-    'unspecified' => theme_get_setting('lib4ri_theme_bib_unspecified')
-  );
-}
-
 /**
  * Implements hook_preprocess().
  */
 function libfourri_theme_preprocess_islandora_objects_subset(&$variables) {
   libfourri_theme_process_global_header($variables);
-}
-
-/**
- * Implements hook_preprocess().
- */
-function libfourri_theme_preprocess_lib4ridora_citation_solr_results(&$variables) {
-  $versions = libfourri_theme_get_accepted_version_types();
-  foreach ($variables['citations'] as &$citation) {
-    foreach ($citation['pdfs'] as $key => &$value) {
-      $value['classes'] = isset($versions[$value['version']]) ? $versions[$value['version']] : "";
-    }
-  }
 }
 
 /**
