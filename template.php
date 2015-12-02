@@ -129,6 +129,7 @@ function libfourri_theme_preprocess_islandora_solr_wrapper(&$variables) {
 
 function libfourri_theme_preprocess_islandora_solr(&$variables) {
   libfourri_theme_citations_for_search_results($variables['results']);
+ // dsm($variables, "vars in islandora solr");
 }
 
 function libfourri_theme_citations_for_search_results(&$results) {
@@ -183,6 +184,17 @@ function libfourri_theme_get_accepted_version_types() {
 }
 
 /**
+ * Implements hook theme_preprocess_block().
+ */
+function libfourri_theme_preprocess_block(&$variables) {
+  if ($variables['block']->delta === 'current_query') {
+    // Not a huge fan of this, but it is hard coded in the islandora_solr module.
+    $variables['content'] = str_replace("Enabled Filters", "Active Filters", $variables['content']);
+    $variables['content'] = str_replace("<h3>Query</h3>", "<h3>Your Search</h3>", $variables['content']);
+  }
+}
+
+/**
  * Implements hook_preprocess().
  */
 function libfourri_theme_preprocess_islandora_objects_subset(&$variables) {
@@ -220,15 +232,15 @@ function libfourri_theme_form_islandora_solr_date_filter_form_alter(&$form, &$fo
 function libfourri_theme_process_global_header(&$variables) {
   global $_islandora_solr_queryclass;
   $variables['islandora_solr_result_count'] = t(
-    'Showing @start - @end of @total',
+    '@show @start - @end of @total',
     array(
       '@start' => $variables['limit'],
       '@end' => $variables['limit'],
       '@total' => $variables['total'],
+      '@show' => t("Search Results"),
     )
   );
   $variables['solr_sort'] = libfourri_theme_block_render('islandora_solr', 'sort');
-
   $output = libfourri_theme_display_subset_results($_islandora_solr_queryclass, $variables);
 }
 
@@ -276,7 +288,8 @@ function libfourri_theme_build_result_count(&$variables) {
   $end = number_format($end, 0, '.', ',');
   $start = number_format($start, 0, '.', ',');
 
-  $variables['islandora_solr_result_count'] = t('Showing @start - @end of @total', array(
+  $variables['islandora_solr_result_count'] = t('@show @start - @end of @total', array(
+    '@show' => t("Search Results"),
     '@start' => $start,
     '@end' => $end,
     '@total' => $total,
@@ -322,11 +335,120 @@ function libfourri_theme_add_secondaries($islandora_solr_query) {
   ));
 }
 
+function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$form_state) {
+  global $_islandora_solr_queryclass;
+  module_load_include('inc', 'islandora_solr', 'includes/utilities');
+  $data_array = array();
+  libfourri_theme_display_subset_results($_islandora_solr_queryclass, &$data_array);
+  $data_array['solr_sort'] = libfourri_theme_block_render('islandora_solr', 'sort');
+  islandora_solr_pager_init($data_array['solr_total'], $_islandora_solr_queryclass->solrLimit);
+  $data_array['solr_pager'] = theme(
+    'pager',
+    array(
+      'tags' => NULL,
+      'element' => 0,
+      'parameters' => NULL,
+      'quantity' => 5,
+    )
+  );
+  $form['islandora_bookmark_table']['#header']['markup'] = t("Select Page");
+  $delimiter = "solr_profile=rss";
+  $pieces = explode($delimiter, $data_array['secondary_display_profiles']);
+  if (count($pieces) > 1) {
+    $pieces[0] = $pieces[0].$delimiter."&amp;citation=true";
+    $data_array['secondary_display_profiles'] = implode("",$pieces);
+  }
+  if (theme_get_setting('lib4ri_theme_omit_extended_collection_meta')) {
+
+  }
+  if (theme_get_setting('lib4ri_theme_omit_extended_bookmark_save')) {
+    $form['islandora_bookmark_save_fieldset'] = NULL;
+  } else {
+    $form['islandora_bookmark_save_fieldset']['fieldset']['#attributes']['class'] = array('bookmark_result_save');
+  }
+
+  $form['islandora_bookmark_export']['fieldset']['#type'] = 'container';
+  $form['islandora_bookmark_export']['fieldset']['#attributes']['class'] = array('bookmark_export');
+  $form['islandora_bookmark_export']['fieldset']['export_options']['#title'] = t("Export As: ");
+  $form['islandora_bookmark_export']['fieldset']['export_all_submit']['#value'] = t("Export All");
+  $form['islandora_bookmark_export']['fieldset']['export_selected_submit']['#value'] = t("Export Selected");
+
+  $form['islandora_bookmark_table']['#prefix'] = '<div class="object-sort-show-wrapper">' .
+    '<div class="displaying-items">' . $data_array['islandora_solr_result_count'] . '</div>' .
+    '<div class="islandora-sort">' . $data_array['solr_sort'] . '</div>' .
+    '<div class="solr-sort-dummy-right"></div>' .
+    '</div>';
+  $form['islandora_bookmark_table']['#prefix'] .= '<div class="object-mock-table-header">' .
+    '<div class="select-items"></div>' .
+    '<div class="object-mock-pager">' . $data_array['solr_pager'] . '</div>' .
+    '<div class="object-mock-icons">' . $data_array['secondary_display_profiles'] . '</div>' .
+    '</div>';
+  // set up the results to have citation publication type links.
+  $pid_keys = array_keys($form['islandora_bookmark_table']['#options']);
+  // Get the PIDS into a format the citation result needs
+  foreach ($pid_keys as $key => $value) {
+    $pid_keys[$key] = array(
+      'PID' => $value,
+    );
+  }
+
+  libfourri_theme_citations_for_search_results($pid_keys);
+  $count = 0;
+  foreach ($form['islandora_bookmark_table']['#options'] as $key => $value) {
+    $form['islandora_bookmark_table']['#options'][$key]['markup'] = $value['markup'] .
+      libfourri_theme_search_result_citation($pid_keys[$count], $value);
+      $count++;
+  }
+}
+
+function libfourri_theme_search_result_citation($pid_keys, $value) {
+
+  $form = array();
+  $form['citation_solr_result'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'lib4ri-citation-solr-results-citation',
+      ),
+    ),
+  );
+
+  $form['citation_solr_result']['detailed_record'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'bib-detail-record',
+      ),
+    ),
+  );
+
+  $form['citation_solr_result']['detailed_record']['value'] = array(
+    '#markup' => l(t("Detailed Record"), "/islandora/object/{$pid_keys['PID']}"),
+  );
+
+  foreach ($pid_keys['citations']['pdfs'] as $key => $in_val) {
+  //  dsm($in_val, "blarg:");
+    $form['citation_solr_result'][$in_val['id']] = array(
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => array(
+          $in_val['classes'] . " {$in_val['id']}",
+        ),
+      ),
+    );
+    $form['citation_solr_result'][$in_val['id']]['value'] = array(
+      '#markup' => l(ucwords($in_val['version']), "/islandora/object/{$pid_keys['PID']}/datastream/{$in_val['dsid']}/view"),
+    );
+  }
+
+  return drupal_render($form);
+}
+
 /**
  * Implements theme_tablesort_indicator().
  */
 function libfourri_theme_tablesort_indicator($variables) {
-	$theme_path = path_to_theme();
+  $theme_path = path_to_theme();
   if ($variables['style'] == "asc") {
     return theme('image', array('path' => "$theme_path/images/caret_up.png", 'alt' => t('sort ascending'), 'title' => t('sort ascending')));
   }

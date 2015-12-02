@@ -9,6 +9,8 @@
   <div class="object-sort-show-wrapper">
     <div class="displaying-items"><?php print $islandora_solr_result_count?></div>
     <div class="islandora-sort"><?php print $solr_sort?></div>
+    <div class="solr-sort-dummy-right">
+    </div>
   </div>
 
   <div class="object-mock-table-header">
