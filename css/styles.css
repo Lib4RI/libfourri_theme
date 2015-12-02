@@ -2720,6 +2720,22 @@ fieldset.islandora-metadata legend span {
   padding-right: 10px;
 }
 
+/* line 79, ../sass/components/_search_results.scss */
+.lib4ri-citation-solr-results-citation {
+  float: right;
+  text-align: right;
+  width: 100%;
+}
+/* line 83, ../sass/components/_search_results.scss */
+.lib4ri-citation-solr-results-citation div {
+  display: inline;
+}
+
+/* line 88, ../sass/components/_search_results.scss */
+.bib-detail-record {
+  float: left;
+}
+
 /**
  * @file
  * Print styling

@@ -383,25 +383,26 @@ function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$fo
     '<div class="object-mock-pager">' . $data_array['solr_pager'] . '</div>' .
     '<div class="object-mock-icons">' . $data_array['secondary_display_profiles'] . '</div>' .
     '</div>';
+
   // set up the results to have citation publication type links.
   $pid_keys = array_keys($form['islandora_bookmark_table']['#options']);
-  // Get the PIDS into a format the citation result needs
-  foreach ($pid_keys as $key => $value) {
-    $pid_keys[$key] = array(
-      'PID' => $value,
-    );
-  }
 
-  libfourri_theme_citations_for_search_results($pid_keys);
-  $count = 0;
   foreach ($form['islandora_bookmark_table']['#options'] as $key => $value) {
+    $obj = islandora_object_load($key);
+    $dt = theme(
+      'lib4ridora_pdf_materials',
+      array(
+        'object' => $obj,
+        'statement' => FALSE,
+      )
+    );
     $form['islandora_bookmark_table']['#options'][$key]['markup'] = $value['markup'] .
-      libfourri_theme_search_result_citation($pid_keys[$count], $value);
+      libfourri_theme_search_result_citation($key, $dt);
       $count++;
   }
 }
 
-function libfourri_theme_search_result_citation($pid_keys, $value) {
+function libfourri_theme_search_result_citation($pid, $value) {
 
   $form = array();
   $form['citation_solr_result'] = array(
@@ -423,23 +424,21 @@ function libfourri_theme_search_result_citation($pid_keys, $value) {
   );
 
   $form['citation_solr_result']['detailed_record']['value'] = array(
-    '#markup' => l(t("Detailed Record"), "/islandora/object/{$pid_keys['PID']}"),
+    '#markup' => l(t("Detailed Record"), "/islandora/object/{$pid}"),
   );
 
-  foreach ($pid_keys['citations']['pdfs'] as $key => $in_val) {
-  //  dsm($in_val, "blarg:");
-    $form['citation_solr_result'][$in_val['id']] = array(
-      '#type' => 'container',
-      '#attributes' => array(
-        'class' => array(
-          $in_val['classes'] . " {$in_val['id']}",
-        ),
+  $form['citation_solr_result']['ib4ri_citation_solr_results_citation'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        "ib4ri-citation-solr-results-citation",
       ),
-    );
-    $form['citation_solr_result'][$in_val['id']]['value'] = array(
-      '#markup' => l(ucwords($in_val['version']), "/islandora/object/{$pid_keys['PID']}/datastream/{$in_val['dsid']}/view"),
-    );
-  }
+    ),
+  );
+
+  $form['citation_solr_result']['ib4ri_citation_solr_results_citation']['value'] = array(
+    '#markup' => $value,
+  );
 
   return drupal_render($form);
 }
