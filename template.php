@@ -273,7 +273,6 @@ function libfourri_theme_add_secondaries($islandora_solr_query) {
 
 function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$form_state) {
   global $_islandora_solr_queryclass;
-   // dsm($form, "form:");
   module_load_include('inc', 'islandora_solr', 'includes/utilities');
   $data_array = array();
   libfourri_theme_display_subset_results($_islandora_solr_queryclass, &$data_array);
