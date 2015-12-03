@@ -2638,6 +2638,16 @@ fieldset.islandora-metadata legend span {
   padding-left: 1.5em;
 }
 
+/* line 24, ../sass/components/views/_block_data_links.scss */
+#block-lib4ridora-lib4ridora-full-text .lib4ridora-pdf-materials {
+  padding-left: .90em;
+}
+/* line 27, ../sass/components/views/_block_data_links.scss */
+#block-lib4ridora-lib4ridora-full-text .lib4ridora-pdf-materials .lib4ridora-pdf-link .availability-text {
+  padding-left: 1em;
+  display: block;
+}
+
 /**
 * Styles for the search results page.
 **/
