@@ -67,6 +67,16 @@ function libfourri_theme_form_system_theme_settings_alter(&$form, &$form_state, 
     '#default_value' => theme_get_setting('lib4ri_theme_omit_extended_collection_meta'),
     '#description' => t("Use this setting to toggle the omission of 'in collections' and 'details' metadata on collection pages. Defaults to Yes"),
   );
+  $form['lib4ri_theme_custom']['lib4ri_theme_omit_extended_bookmark_save'] = array(
+    '#type' => 'select',
+    '#title' => t('Omit add bookmark fieldset from search results.'),
+    '#options' => array(
+      0 => t('No'),
+      1 => t('Yes'),
+    ),
+    '#default_value' => theme_get_setting('lib4ri_theme_omit_extended_bookmark_save'),
+    '#description' => t("Use this setting to toggle the omission of the add bookmark functionality from the bookmark display profile. Defaults to Yes"),
+  );
   $form['lib4ri_theme_custom']['lib4ri_theme_omit_in_collection_obj'] = array(
     '#type' => 'select',
     '#title' => t("Ommit 'in collection' data on object pages."),

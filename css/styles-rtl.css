@@ -56,8 +56,8 @@ ul {
     width: 66.66667%;
     margin-right: 33.33333%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -70,8 +70,8 @@ ul {
     width: 33.33333%;
     margin-right: 0%;
     margin-left: -33.33333%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -93,8 +93,8 @@ ul {
     width: 66.66667%;
     margin-right: 0%;
     margin-left: -66.66667%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -107,8 +107,8 @@ ul {
     width: 33.33333%;
     margin-right: 66.66667%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -131,8 +131,8 @@ ul {
     width: 66.66667%;
     margin-right: 33.33333%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -145,8 +145,8 @@ ul {
     width: 33.33333%;
     margin-right: 0%;
     margin-left: -33.33333%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -159,8 +159,8 @@ ul {
     width: 100%;
     margin-right: 0%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -176,8 +176,8 @@ ul {
   }
   /* line 136, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -190,8 +190,8 @@ ul {
     width: 33.33333%;
     margin-right: 0%;
     margin-left: -33.33333%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -205,8 +205,8 @@ ul {
     width: 33.33333%;
     margin-right: 33.33333%;
     margin-left: -66.66667%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -219,8 +219,8 @@ ul {
     width: 33.33333%;
     margin-right: 66.66667%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -246,8 +246,8 @@ ul {
     width: 80%;
     margin-right: 20%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -260,8 +260,8 @@ ul {
     width: 20%;
     margin-right: 0%;
     margin-left: -20%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -283,8 +283,8 @@ ul {
     width: 80%;
     margin-right: 0%;
     margin-left: -80%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -297,8 +297,8 @@ ul {
     width: 20%;
     margin-right: 80%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -321,8 +321,8 @@ ul {
     width: 60%;
     margin-right: 20%;
     margin-left: -80%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -335,8 +335,8 @@ ul {
     width: 20%;
     margin-right: 0%;
     margin-left: -20%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -349,8 +349,8 @@ ul {
     width: 20%;
     margin-right: 80%;
     margin-left: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;

@@ -67,7 +67,7 @@ stylesheets[all][] = css/styles.css
 
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+scripts[] = js/script.js
 
 
 
@@ -141,18 +141,18 @@ settings[zen_wireframes]           = 0
 
 settings[lib4ri_theme_omit_extended_collection_meta]    = 1;
 settings[lib4ri_theme_search_text] = Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed fringilla erat, eget gravida dui. Suspendisse potenti. Donec non nisi dictum, pellentesque risus nec, sollicitudin est. Nunc lorem sapien, congue mollis dignissim vitae, faucibus vitae sem. Nam et tellus nisl. Vivamus nec ultricies sapien. Cras a ipsum velit.
-settings[lib4ri_theme_omit_in_collection_obj] = 1;
+settings[lib4ri_theme_omit_in_collection_obj]           = 1;
 
-settings[lib4ri_theme_bib_accepted]     = fa fa-unlock-alt
-settings[lib4ri_theme_bib_updated]      = fa fa-flag
-settings[lib4ri_theme_bib_published]    = fa fa-lock
-settings[lib4ri_theme_bib_supplemental] = fa fa-life-ring
-settings[lib4ri_theme_bib_unspecified]  = fa fa-question-circle
-
+settings[lib4ri_theme_bib_accepted]                     = fa fa-unlock-alt
+settings[lib4ri_theme_bib_updated]                      = fa fa-flag
+settings[lib4ri_theme_bib_published]                    = fa fa-lock
+settings[lib4ri_theme_bib_supplemental]                 = fa fa-life-ring
+settings[lib4ri_theme_bib_unspecified]                  = fa fa-question-circle
+settings[lib4ri_theme_omit_extended_bookmark_save]      = 1
 ; To make this sub-theme an admin theme with shortcut links next to titles,
 ; uncomment the line below.
 
-;settings[shortcut_module_link]    = 1
+;settings[shortcut_module_link]                         = 1
 
 ; To add a Panels layout (which can also be used by Display Suite), uncomment
 ; the line below and see the documentation at: https://drupal.org/node/495654

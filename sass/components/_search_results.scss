@@ -1,0 +1,90 @@
+/**
+* Styles for the search results page.
+**/
+
+.bookmark_export div, .bookmark_export input {
+  display: inline;
+}
+
+.bookmark_export input{
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #dddddd;
+  border-bottom-color: -moz-use-text-color;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: stretch stretch;
+  border-image-slice: 100% 100% 100% 100%;
+  border-image-source: none;
+  border-image-width: 1 1 1 1;
+  border-left-color: -moz-use-text-color;
+  border-left-style: none;
+  border-left-width: medium;
+  border-right-color: -moz-use-text-color;
+  border-right-style: none;
+  border-right-width: medium;
+  border-top-color: -moz-use-text-color;
+  border-top-style: none;
+  border-top-width: medium;
+  color: black;
+}
+
+.bookmark_export{
+  padding-bottom: 1.2em;
+  div.form-type-select{
+    label, select{
+      display: inline;
+    }
+  }
+  .form-submit{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.islandora-solr-query-wrap, 
+.islandora-solr-query-list.query-list {
+  display: inline-block;
+}
+
+.islandora-solr-query-list, .islandora-solr-filter-list{
+  li{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.islandora-solr-query-wrap, .islandora-solr-filter-wrap{
+  h3{
+    margin-top: .33em;
+    margin-bottom: .33em;
+  }
+}
+
+#islandora-solr-top {
+  min-height: 5px !important;
+}
+
+.lib4ri-citation-solr-results-citation > div.fa {
+  float: right;
+  a{
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+}
+
+.lib4ri-citation-solr-results-citation {
+  float: right;
+  text-align: right;
+  width: 100%;
+  div {
+    display: inline;
+  }
+}
+
+.bib-detail-record {
+  float: left;
+}
