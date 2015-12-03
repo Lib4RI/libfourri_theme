@@ -13,7 +13,6 @@
     <div class="islandora-objects-list-item clearfix">
       <dl class="islandora-object <?php print $object['class']; ?>">
         <dt class="islandora-object-thumb">
-<!--           <input type="checkbox" class="islandora-list-item-select"> -->
         </dt>
         <dd class="islandora-object-caption <?php print $object['class']?> <?php print $first; ?>">
           <strong>
