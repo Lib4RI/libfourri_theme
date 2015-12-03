@@ -2586,76 +2586,37 @@ fieldset.islandora-metadata legend span {
 /**
 * Styles for recent additions block.
 **/
-/* .lib4ri-citation-solr-results-citation{ */
-/*   .bib-detail-record { */
-/*     display: inline-block; */
-/*   } */
-/*   .bib-versions { */
-/*     display: inline-block; */
-/*     float: right; */
-/*     span{ */
-/*       a{ */
-/*         padding-left: 5px; */
-/*       } */
-/*     } */
-/*   } */
-/* } */
-/* .front .lib4ri-citation-solr-results-citation{ */
-/*   padding-top: 5px; */
-/*   padding-bottom: 5px; */
-/*   border-bottom: 1px solid grey; */
-/* } */
-/* .csl-bib-body div { */
-/*   padding-left: 0 !important; */
-/*   text-indent: 0 !important; */
-/* } */
-/* .lib4ri-citation-solr-results-citation .bib-versions { */
-/*   display: inline-block; */
-/*   float: right; */
-/* } */
-/* .bib-versions div{ */
-/*   display: inline-block; */
-/* } */
-/* .lib4ri-citation-solr-results-citation div { */
-/*   display: inline; */
-/* } */
-/* .csl-entry { */
-/*   display: inline-block; */
-/* } */
-/* .csl-entry > div { */
-/*   display: block; */
-/* } */
-/* line 53, ../sass/components/_recent_additions.scss */
+/* line 6, ../sass/components/_recent_additions.scss */
 .front .lib4ri-citation-solr-results-citation {
   border-bottom: 2px solid grey;
 }
 
-/* line 58, ../sass/components/_recent_additions.scss */
+/* line 11, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation {
   display: block;
   padding-top: 5px;
   padding-bottom: 10px;
 }
-/* line 62, ../sass/components/_recent_additions.scss */
+/* line 15, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .csl-bib-body {
   display: block;
   text-align: left;
 }
-/* line 66, ../sass/components/_recent_additions.scss */
+/* line 19, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .csl-bib-body .csl-entry > div {
   padding-left: 0px !important;
 }
-/* line 71, ../sass/components/_recent_additions.scss */
+/* line 24, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .bib-detail-record {
   display: inline-block;
   margin-top: 5px;
 }
-/* line 75, ../sass/components/_recent_additions.scss */
+/* line 28, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .bib-versions {
   display: inline-block;
   float: right;
 }
-/* line 78, ../sass/components/_recent_additions.scss */
+/* line 31, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .bib-versions > div > div {
   display: inline-block;
 }
@@ -2783,17 +2744,6 @@ fieldset.islandora-metadata legend span {
   float: right;
 }
 
-/* .lib4ri-citation-solr-results-citation { */
-/*   float: right; */
-/*   text-align: right; */
-/*   width: 100%; */
-/*   div { */
-/*     display: inline; */
-/*   } */
-/* } */
-/* .bib-detail-record { */
-/*   float: left; */
-/* } */
 /**
  * @file
  * Print styling
