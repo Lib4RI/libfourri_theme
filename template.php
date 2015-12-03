@@ -129,7 +129,6 @@ function libfourri_theme_preprocess_islandora_solr_wrapper(&$variables) {
 
 function libfourri_theme_preprocess_islandora_solr(&$variables) {
   libfourri_theme_citations_for_search_results($variables['results']);
- // dsm($variables, "vars in islandora solr");
 }
 
 /**
@@ -274,6 +273,7 @@ function libfourri_theme_add_secondaries($islandora_solr_query) {
 
 function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$form_state) {
   global $_islandora_solr_queryclass;
+   // dsm($form, "form:");
   module_load_include('inc', 'islandora_solr', 'includes/utilities');
   $data_array = array();
   libfourri_theme_display_subset_results($_islandora_solr_queryclass, &$data_array);
@@ -320,9 +320,6 @@ function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$fo
     '<div class="object-mock-pager">' . $data_array['solr_pager'] . '</div>' .
     '<div class="object-mock-icons">' . $data_array['secondary_display_profiles'] . '</div>' .
     '</div>';
-
-  // set up the results to have citation publication type links.
-  $pid_keys = array_keys($form['islandora_bookmark_table']['#options']);
 
   foreach ($form['islandora_bookmark_table']['#options'] as $key => $value) {
     $obj = islandora_object_load($key);

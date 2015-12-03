@@ -2,28 +2,81 @@
 * Styles for recent additions block.
 **/
 
-.lib4ri-citation-solr-results-citation{
+/* .lib4ri-citation-solr-results-citation{ */
+/*   .bib-detail-record { */
+/*     display: inline-block; */
+/*   } */
+/*   .bib-versions { */
+/*     display: inline-block; */
+/*     float: right; */
+/*     span{ */
+/*       a{ */
+/*         padding-left: 5px; */
+/*       } */
+/*     } */
+/*   } */
+/* } */
+
+/* .front .lib4ri-citation-solr-results-citation{ */
+/*   padding-top: 5px; */
+/*   padding-bottom: 5px; */
+/*   border-bottom: 1px solid grey; */
+/* } */
+
+/* .csl-bib-body div { */
+/*   padding-left: 0 !important; */
+/*   text-indent: 0 !important; */
+/* } */
+
+/* .lib4ri-citation-solr-results-citation .bib-versions { */
+/*   display: inline-block; */
+/*   float: right; */
+/* } */
+
+/* .bib-versions div{ */
+/*   display: inline-block; */
+/* } */
+
+/* .lib4ri-citation-solr-results-citation div { */
+/*   display: inline; */
+/* } */
+
+/* .csl-entry { */
+/*   display: inline-block; */
+/* } */
+
+/* .csl-entry > div { */
+/*   display: block; */
+/* } */
+
+.front{
+  .lib4ri-citation-solr-results-citation {
+    border-bottom: 2px solid grey;
+  }
+}
+
+.lib4ri-citation-solr-results-citation {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  .csl-bib-body {
+    display: block;
+    text-align: left;
+    .csl-entry{
+      >div{
+        padding-left: 0px !important;
+      }
+    }
+  }
   .bib-detail-record {
     display: inline-block;
+    margin-top: 5px;
   }
   .bib-versions {
     display: inline-block;
     float: right;
-    span{
-      a{
-        padding-left: 5px;
-      }
+    > div > div {
+      display: inline-block;
     }
   }
-}
-
-.front .lib4ri-citation-solr-results-citation{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid grey;
-}
-
-.csl-bib-body div {
-  padding-left: 0 !important;
-  text-indent: 0 !important;
 }
