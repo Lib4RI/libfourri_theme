@@ -275,7 +275,7 @@ function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$fo
   global $_islandora_solr_queryclass;
   module_load_include('inc', 'islandora_solr', 'includes/utilities');
   $data_array = array();
-  libfourri_theme_display_subset_results($_islandora_solr_queryclass, &$data_array);
+  libfourri_theme_display_subset_results($_islandora_solr_queryclass, $data_array);
   $data_array['solr_sort'] = libfourri_theme_block_render('islandora_solr', 'sort');
   islandora_solr_pager_init($data_array['solr_total'], $_islandora_solr_queryclass->solrLimit);
   $data_array['solr_pager'] = theme(
