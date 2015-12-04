@@ -7,7 +7,7 @@
 ?>
 <div class="islandora-objects clearfix">
   <div class="object-sort-show-wrapper">
-    <div class="displaying-items"><?php print $islandora_solr_result_count?></div>
+    <div class="displaying-items"><?php isset($islandora_solr_result_count) ? print $islandora_solr_result_count : print "";?></div>
     <div class="islandora-sort"><?php print $solr_sort?></div>
     <div class="solr-sort-dummy-right">
     </div>

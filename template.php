@@ -105,7 +105,7 @@ function libfourri_theme_preprocess_page(&$variables) {
   $current_path = current_path();
   $cp_exp = explode("/", $current_path);
 
-  if (in_array('islandora:collectionCModel', $object->models)) {
+  if (isset($object) && in_array('islandora:collectionCModel', $object->models)) {
     $variables['page']['content']['system_main']['islandora_basic_collection_display']['#weight'] = -1;
     $variables['page']['content']['system_main']['wrapper']['#weight'] = -2;
     // Toggle the appearance of 'In Collections' and 'Details' on collection pages.
@@ -167,15 +167,18 @@ function libfourri_theme_form_islandora_solr_date_filter_form_alter(&$form, &$fo
 
 function libfourri_theme_process_global_header(&$variables) {
   global $_islandora_solr_queryclass;
-  $variables['islandora_solr_result_count'] = t(
-    '@show @start - @end of @total',
-    array(
-      '@start' => $variables['limit'],
-      '@end' => $variables['limit'],
-      '@total' => $variables['total'],
-      '@show' => t("Search Results"),
-    )
-  );
+  if (isset($variables['total'])) {
+    $variables['islandora_solr_result_count'] = t(
+      '@show @start - @end of @total',
+      array(
+        '@start' => $variables['limit'],
+        '@end' => $variables['limit'],
+        '@total' => $variables['total'],
+        '@show' => t("Search Results"),
+      )
+    );
+  }
+
   $variables['solr_sort'] = libfourri_theme_block_render('islandora_solr', 'sort');
   $output = libfourri_theme_display_subset_results($_islandora_solr_queryclass, $variables);
 }
@@ -275,7 +278,7 @@ function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$fo
   global $_islandora_solr_queryclass;
   module_load_include('inc', 'islandora_solr', 'includes/utilities');
   $data_array = array();
-  libfourri_theme_display_subset_results($_islandora_solr_queryclass, &$data_array);
+  libfourri_theme_display_subset_results($_islandora_solr_queryclass, $data_array);
   $data_array['solr_sort'] = libfourri_theme_block_render('islandora_solr', 'sort');
   islandora_solr_pager_init($data_array['solr_total'], $_islandora_solr_queryclass->solrLimit);
   $data_array['solr_pager'] = theme(
@@ -331,7 +334,6 @@ function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$fo
     );
     $form['islandora_bookmark_table']['#options'][$key]['markup'] = $value['markup'] .
       libfourri_theme_search_result_citation($key, $dt);
-      $count++;
   }
 }
 
