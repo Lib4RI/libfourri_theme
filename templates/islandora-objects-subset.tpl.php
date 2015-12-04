@@ -15,7 +15,7 @@
 
   <div class="object-mock-table-header">
     <div class="select-items">
-      <div class="select-items-input-wrapper"><input type="checkbox" class="islandora-list-item-select"><?php print t("Select Page");?></div>
+      <div class="select-items-input-wrapper"></div>
     </div>
     <div class="object-mock-pager">
       <?php print $pager; ?>
@@ -25,6 +25,5 @@
       <?php print $secondary_display_profiles;?>
     </div>
   </div>
-
   <?php print $content; ?>
 </div>

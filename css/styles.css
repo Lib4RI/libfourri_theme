@@ -2578,34 +2578,47 @@ fieldset.islandora-metadata legend span {
   display: inline-block;
 }
 
+/* line 100, ../sass/components/_blocks.scss */
+#block-lib4ridora-lib4ridora-organizational-units .item-list {
+  padding-left: 1em;
+}
+
 /**
 * Styles for recent additions block.
 **/
 /* line 6, ../sass/components/_recent_additions.scss */
+.front .lib4ri-citation-solr-results-citation {
+  border-bottom: 2px solid grey;
+}
+
+/* line 11, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+/* line 15, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation .csl-bib-body {
+  display: block;
+  text-align: left;
+}
+/* line 19, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation .csl-bib-body .csl-entry > div {
+  padding-left: 0px !important;
+}
+/* line 24, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .bib-detail-record {
   display: inline-block;
+  margin-top: 5px;
 }
-/* line 9, ../sass/components/_recent_additions.scss */
+/* line 28, ../sass/components/_recent_additions.scss */
 .lib4ri-citation-solr-results-citation .bib-versions {
   display: inline-block;
   float: right;
 }
-/* line 13, ../sass/components/_recent_additions.scss */
-.lib4ri-citation-solr-results-citation .bib-versions span a {
-  padding-left: 5px;
-}
-
-/* line 20, ../sass/components/_recent_additions.scss */
-.front .lib4ri-citation-solr-results-citation {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid grey;
-}
-
-/* line 26, ../sass/components/_recent_additions.scss */
-.csl-bib-body div {
-  padding-left: 0 !important;
-  text-indent: 0 !important;
+/* line 31, ../sass/components/_recent_additions.scss */
+.lib4ri-citation-solr-results-citation .bib-versions > div > div {
+  display: inline-block;
 }
 
 /**
@@ -2731,19 +2744,14 @@ fieldset.islandora-metadata legend span {
 }
 
 /* line 79, ../sass/components/_search_results.scss */
-.lib4ri-citation-solr-results-citation {
-  float: right;
-  text-align: right;
-  width: 100%;
-}
-/* line 83, ../sass/components/_search_results.scss */
-.lib4ri-citation-solr-results-citation div {
+.lib4ridora-pdf-materials > div {
   display: inline;
 }
 
-/* line 88, ../sass/components/_search_results.scss */
-.bib-detail-record {
-  float: left;
+/* line 82, ../sass/components/_search_results.scss */
+.ib4ri-citation-solr-results-citation {
+  display: block;
+  float: right;
 }
 
 /**
