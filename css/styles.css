@@ -2743,13 +2743,26 @@ fieldset.islandora-metadata legend span {
   padding-right: 10px;
 }
 
-/* line 79, ../sass/components/_search_results.scss */
-.lib4ridora-pdf-materials > div {
+/* line 80, ../sass/components/_search_results.scss */
+.not-front .lib4ri-citation-solr-results-citation {
+  float: right;
+  text-align: right;
+  width: 100%;
+}
+/* line 84, ../sass/components/_search_results.scss */
+.not-front .lib4ri-citation-solr-results-citation div {
   display: inline;
 }
-
-/* line 82, ../sass/components/_search_results.scss */
-.ib4ri-citation-solr-results-citation {
+/* line 89, ../sass/components/_search_results.scss */
+.not-front .bib-detail-record {
+  float: left;
+}
+/* line 92, ../sass/components/_search_results.scss */
+.not-front .lib4ridora-pdf-materials > div {
+  display: inline;
+}
+/* line 95, ../sass/components/_search_results.scss */
+.not-front .ib4ri-citation-solr-results-citation {
   display: block;
   float: right;
 }

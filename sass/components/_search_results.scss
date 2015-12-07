@@ -76,10 +76,24 @@
   }
 }
 
-.lib4ridora-pdf-materials > div {
-  display: inline;
-}
-.ib4ri-citation-solr-results-citation {
-  display: block;
-  float: right;
+.not-front{
+  .lib4ri-citation-solr-results-citation {
+    float: right;
+    text-align: right;
+    width: 100%;
+    div {
+      display: inline;
+    }
+  }
+
+  .bib-detail-record {
+    float: left;
+  }
+  .lib4ridora-pdf-materials > div {
+    display: inline;
+  }
+  .ib4ri-citation-solr-results-citation {
+    display: block;
+    float: right;
+  }
 }
