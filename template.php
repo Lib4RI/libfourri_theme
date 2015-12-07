@@ -127,10 +127,6 @@ function libfourri_theme_preprocess_islandora_solr_wrapper(&$variables) {
   libfourri_theme_process_global_header($variables);
 }
 
-function libfourri_theme_preprocess_islandora_solr(&$variables) {
-  libfourri_theme_citations_for_search_results($variables['results']);
-}
-
 /**
  * Implements hook theme_preprocess_block().
  */
