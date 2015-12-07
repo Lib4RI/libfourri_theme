@@ -146,6 +146,15 @@ function libfourri_theme_preprocess_islandora_objects_subset(&$variables) {
 }
 
 /**
+ * Implements hook_islandora_bookmark_export_handler_alter().
+ */
+function libfourri_theme_islandora_bookmark_export_handler_alter(&$output) {
+  if (isset($output['Bookmark'])) {
+    unset($output['Bookmark']);
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function libfourri_theme_form_islandora_solr_range_slider_form_alter(&$form, &$form_state, $form_id) {
