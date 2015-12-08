@@ -155,6 +155,9 @@ function libfourri_theme_preprocess_islandora_objects_subset(&$variables) {
   libfourri_theme_process_global_header($variables);
 }
 
+/**
+ * Implements hook_islandora_bookmark_export_handler_alter().
+ */
 function libfourri_theme_islandora_bookmark_export_handler_alter(&$output) {
   if (isset($output['Bookmark'])) {
     unset($output['Bookmark']);
