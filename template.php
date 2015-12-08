@@ -102,7 +102,7 @@ function libfourri_theme_form_islandora_solr_simple_search_form_alter(&$form, &$
  */
 function libfourri_theme_preprocess_html(&$vars) {
   $object = menu_get_object('islandora_object', 2);
-  if (isset($object)) {
+  if (is_object($object)) {
     $rep = implode(" ", $object->{'models'});
     $vars['classes_array'][] = str_replace(":", "-", $rep);
   }
