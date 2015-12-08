@@ -98,13 +98,23 @@ function libfourri_theme_form_islandora_solr_simple_search_form_alter(&$form, &$
 }
 
 /**
+ * Implements hook_preprocess_html().
+ */
+function libfourri_theme_preprocess_html(&$vars) {
+  $object = menu_get_object('islandora_object', 2);
+  if (isset($object)) {
+    $rep = implode(" ", $object->{'models'});
+    $vars['classes_array'][] = str_replace(":", "-", $rep);
+  }
+}
+
+/**
  * Implements hook_preprocess_page().
  */
 function libfourri_theme_preprocess_page(&$variables) {
   $object = menu_get_object('islandora_object', 2);
   $current_path = current_path();
   $cp_exp = explode("/", $current_path);
-
   if (isset($object) && in_array('islandora:collectionCModel', $object->models)) {
     $variables['page']['content']['system_main']['islandora_basic_collection_display']['#weight'] = -1;
     $variables['page']['content']['system_main']['wrapper']['#weight'] = -2;
@@ -145,9 +155,6 @@ function libfourri_theme_preprocess_islandora_objects_subset(&$variables) {
   libfourri_theme_process_global_header($variables);
 }
 
-/**
- * Implements hook_islandora_bookmark_export_handler_alter().
- */
 function libfourri_theme_islandora_bookmark_export_handler_alter(&$output) {
   if (isset($output['Bookmark'])) {
     unset($output['Bookmark']);

@@ -10,22 +10,81 @@
  * aggregated with other stylesheets, for improved front-end performance.
  */
 @media print {
-
+  header, .messages, legend, .object-sort-show-wrapper, .object-mock-table-header, .islandora-sort, #edit-islandora-simple-search-query{
+    display: none !important;
+  }
+  .islandora-solr-simple-search-form .form-type-textfield, div.adv-search-lnk, #edit-submit, div.bookmark_export, .islandora-bookmark-solr-results th, .islandora-bookmark-solr-results.form-checkbox{
+    display: none !important;
+  }
+  .front .lib4ri-citation-solr-results-citation{
+    border-bottom-width: 1px solid grey;
+  }
+  dd:empty{
+    display: none !important;
+  }
+  dd, dt{
+    padding: 0.25em;
+    padding-left: 0em !important;
+  }
+  body {
+    font-size: 77% !important;
+    line-height: 1em !important;
+  }
+  .page__title.title {
+    font-size: 1.25em;
+  }
+  .ir-citationCModel{
+    h1#page-title{
+      display: none;
+    }
+  }
+  div.bib-detail-record{
+    a{
+      display: none !important;
+    }
+  }
+  li a.remove-query{
+    display: none !important;
+  }
+  fieldset{
+    margin: 0 !important;
+    padding: 0em !important;
+  }
+  .form-item{
+    margin-top: .25em !important;
+    margin-bottom: .25em !important;
+  }
   /* Underline all links. */
   a:link,
   a:visited {
-    text-decoration: underline !important;
+    text-decoration: underline;
 
     /* Don't underline header. */
     &.header__site-link {
       text-decoration: none !important;
     }
   }
-
+  tr{
+    border: none !important;
+    border-bottom-color: transparent !important;
+  }
+  table.islandora-bookmark-solr-results tr.even, table.islandora-bookmark-solr-results tr.odd {
+    border-bottom-color: transparent !important;
+  }
+  a{
+    color: black !important;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    text-decoration-style: solid !important;
+  }
+  tr a{
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+  }
   #content {
     /* Add visible URL after links. */
     a[href]:after {
-      content: " (" attr(href) ")";
+/*       content: " (" attr(href) ")"; */
       font-weight: normal;
       font-size: $base-font-size;
     }
@@ -38,7 +97,6 @@
 
     /* Add visible title after abbreviations. */
     abbr[title]:after {
-      content: " (" attr(title) ")";
     }
   }
 
