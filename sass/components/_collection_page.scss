@@ -35,6 +35,13 @@ table.islandora-bookmark-solr-results{
   }
   tbody{
     border-top: none !important;
+    tr{
+     td{
+       >a{
+         display: none;
+       }
+     }
+    }
   }
   tbody:before {
     line-height:0em;
