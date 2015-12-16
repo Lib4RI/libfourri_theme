@@ -141,7 +141,7 @@ function libfourri_theme_preprocess_islandora_solr_wrapper(&$variables) {
  * Implements hook theme_preprocess_block().
  */
 function libfourri_theme_preprocess_block(&$variables) {
-  if ($variables['block']->delta === 'current_query') {
+  if ($variables['block']->delta === 'current_query_facet_name') {
     // Not a huge fan of this, but it is hard coded in the islandora_solr module.
     $variables['content'] = str_replace("Enabled Filters", "Active Filters", $variables['content']);
     $variables['content'] = str_replace("<h3>Query</h3>", "<h3>Your Search</h3>", $variables['content']);

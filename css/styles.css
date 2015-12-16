@@ -2491,46 +2491,46 @@ fieldset.islandora-metadata legend span {
 }
 
 /* line 10, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query h2, .islandora-solr-filter-wrap h2 {
+#block-islandora-solr-current-query-facet-name h2, .islandora-solr-filter-wrap h2 {
   display: inline-block;
   font-size: 80%;
 }
 /* line 14, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query h2::after, .islandora-solr-filter-wrap h2::after {
+#block-islandora-solr-current-query-facet-name h2::after, .islandora-solr-filter-wrap h2::after {
   content: ":";
 }
 /* line 17, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query h3, .islandora-solr-filter-wrap h3 {
+#block-islandora-solr-current-query-facet-name h3, .islandora-solr-filter-wrap h3 {
   display: inline-block;
   font-size: 80%;
 }
 /* line 21, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query h3::after, .islandora-solr-filter-wrap h3::after {
+#block-islandora-solr-current-query-facet-name h3::after, .islandora-solr-filter-wrap h3::after {
   content: ":";
 }
 /* line 24, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query .islandora-solr-query-wrap, .islandora-solr-filter-wrap .islandora-solr-query-wrap {
+#block-islandora-solr-current-query-facet-name .islandora-solr-query-wrap, .islandora-solr-filter-wrap .islandora-solr-query-wrap {
   display: inline-block;
 }
 /* line 27, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query .islandora-solr-query-wrap div.item-list ul, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul {
+#block-islandora-solr-current-query-facet-name .islandora-solr-query-wrap div.item-list ul, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul {
   margin-top: .25em;
   margin-bottom: .25em;
   padding-left: 0px;
 }
 /* line 31, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query .islandora-solr-query-wrap div.item-list ul li:hover, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul li:hover {
+#block-islandora-solr-current-query-facet-name .islandora-solr-query-wrap div.item-list ul li:hover, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul li:hover {
   background-color: #dddddd;
   border-radius: 3px;
 }
 /* line 35, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query .islandora-solr-query-wrap div.item-list ul li, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul li {
+#block-islandora-solr-current-query-facet-name .islandora-solr-query-wrap div.item-list ul li, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul li {
   display: inline-block;
   list-style: none;
   list-style-image: none;
 }
 /* line 39, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query .islandora-solr-query-wrap div.item-list ul li a, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul li a {
+#block-islandora-solr-current-query-facet-name .islandora-solr-query-wrap div.item-list ul li a, .islandora-solr-filter-wrap .islandora-solr-query-wrap div.item-list ul li a {
   text-decoration: none;
   float: right;
   background: url('../images/cross108.png?1450117859') center center no-repeat;
@@ -2542,25 +2542,25 @@ fieldset.islandora-metadata legend span {
   vertical-align: text-center;
 }
 /* line 54, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query ul.islandora-solr-filter-list, .islandora-solr-filter-wrap ul.islandora-solr-filter-list {
+#block-islandora-solr-current-query-facet-name ul.islandora-solr-filter-list, .islandora-solr-filter-wrap ul.islandora-solr-filter-list {
   margin-top: .25em;
   margin-bottom: .25em;
   display: inline-block;
   padding-left: 0px;
 }
 /* line 59, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query ul.islandora-solr-filter-list li:hover, .islandora-solr-filter-wrap ul.islandora-solr-filter-list li:hover {
+#block-islandora-solr-current-query-facet-name ul.islandora-solr-filter-list li:hover, .islandora-solr-filter-wrap ul.islandora-solr-filter-list li:hover {
   background-color: #dddddd;
   border-radius: 3px;
 }
 /* line 63, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query ul.islandora-solr-filter-list li, .islandora-solr-filter-wrap ul.islandora-solr-filter-list li {
+#block-islandora-solr-current-query-facet-name ul.islandora-solr-filter-list li, .islandora-solr-filter-wrap ul.islandora-solr-filter-list li {
   display: inline-block;
   list-style: none;
   list-style-image: none;
 }
 /* line 67, ../sass/components/_blocks.scss */
-#block-islandora-solr-current-query ul.islandora-solr-filter-list li a, .islandora-solr-filter-wrap ul.islandora-solr-filter-list li a {
+#block-islandora-solr-current-query-facet-name ul.islandora-solr-filter-list li a, .islandora-solr-filter-wrap ul.islandora-solr-filter-list li a {
   text-decoration: none;
   float: right;
   background: url('../images/cross108.png?1450117859') center center no-repeat;
