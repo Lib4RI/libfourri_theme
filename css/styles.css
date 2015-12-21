@@ -2740,6 +2740,7 @@ fieldset.islandora-metadata legend span {
 /* line 7, ../sass/components/_organizational_unit.scss */
 #block-lib4ridora-lib4ridora-organizational-units li span {
   color: #999999;
+  padding-left: 10px;
 }
 
 /**
