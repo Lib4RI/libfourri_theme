@@ -32,7 +32,7 @@ table.islandora-bookmark-solr-results{
     th{
       border: none;
     }
-  }
+  } 
   tbody{
     border-top: none !important;
     tr{
@@ -55,6 +55,10 @@ table.islandora-bookmark-solr-results{
   tr.even, tr.odd{
     background-color: transparent !important;
   }
+}
+
+table.islandora-bookmark-solr-results{
+  margin-top: -2.4em\9;
 }
 
 .islandora-sort{

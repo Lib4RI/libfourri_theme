@@ -85,7 +85,9 @@ function libfourri_theme_form_islandora_solr_simple_search_form_alter(&$form, &$
     '#markup' => "<div class='adv-search-lnk'>" . l(t("Advanced Search"), "advanced-search", array('attributes' => array('class' => array('adv_search')))) . "</div>",
   );
   $form['simple']['advanced_link'] = $link;
+
   $form['simple']['islandora_simple_search_query']['#attributes']['placeholder'] = t("Search");
+
   if (drupal_is_front_page()) {
     $form['simple']['islandora_simple_search_query']['#attributes']['size'] = 30;
     if (theme_get_setting('lib4ri_theme_search_text')) {
