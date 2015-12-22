@@ -396,6 +396,22 @@ function libfourri_theme_search_result_citation($pid, $value) {
 }
 
 /**
+ * Implements hook_block_view_alter().
+ */
+function libfourri_theme_block_view_alter(&$data, $block) {
+  $arg = explode('/', drupal_get_path_alias());
+  if ($arg[3] != NULL) {
+    if (in_array($block->delta , array(
+      'lib4ridora_full_text',
+      'lib4ridora_related_research',
+      'publication_links-block'))) {
+      unset($data['subject']);
+      unset($data['content']);
+    }
+  }
+}
+
+/**
  * Implements theme_tablesort_indicator().
  */
 function libfourri_theme_tablesort_indicator($variables) {
