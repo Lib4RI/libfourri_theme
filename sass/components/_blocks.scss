@@ -16,7 +16,7 @@
   }
   h3{
     display: inline-block;
-    font-size: 80%;
+    font-size: 100%;
   }
   h3::after{
     content: ":";
@@ -36,7 +36,7 @@
           display: inline-block;
           list-style: none;
           list-style-image: none;
-          a{
+          a{ 
             text-decoration: none;
             float: right;
             background: image-url("cross108.png") center center no-repeat;
@@ -99,5 +99,16 @@
 #block-lib4ridora-lib4ridora-organizational-units{
   .item-list {
     padding-left: 1em;
+  }
+  .form-item{
+    margin-top: 0.3em;
+  }
+}
+
+.lib4ridora-citation-solr-results-inner {
+  display: inline-block;
+  width: 100%;
+  .bib-versions{
+    margin-top: 5px;
   }
 }

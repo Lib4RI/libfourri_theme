@@ -85,7 +85,9 @@ function libfourri_theme_form_islandora_solr_simple_search_form_alter(&$form, &$
     '#markup' => "<div class='adv-search-lnk'>" . l(t("Advanced Search"), "advanced-search", array('attributes' => array('class' => array('adv_search')))) . "</div>",
   );
   $form['simple']['advanced_link'] = $link;
+
   $form['simple']['islandora_simple_search_query']['#attributes']['placeholder'] = t("Search");
+
   if (drupal_is_front_page()) {
     $form['simple']['islandora_simple_search_query']['#attributes']['size'] = 30;
     if (theme_get_setting('lib4ri_theme_search_text')) {
@@ -391,6 +393,22 @@ function libfourri_theme_search_result_citation($pid, $value) {
   );
 
   return drupal_render($form);
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function libfourri_theme_block_view_alter(&$data, $block) {
+  if (arg(3) != NULL) {
+    if (in_array($block->delta , array(
+      'lib4ridora_full_text',
+      'lib4ridora_related_research',
+      'publication_links-block')) &&
+      (strcmp($block->module, "lib4ridora") === 0) || (strcmp($block->module, "views") === 0)) {
+      unset($data['subject']);
+      unset($data['content']);
+    }
+  }
 }
 
 /**

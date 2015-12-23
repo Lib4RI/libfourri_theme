@@ -3,17 +3,30 @@
  */
 
 .front{
+  .form-submit{
+    margin-left: 15px \0/IE9 !important;
+    overflow: visible;
+    margin-top: -29px \0/IE9 !important;
+  }
+  input{
+    line-height:100% \0/ !important;
+  }
   #islandora-solr-simple-search-form {
     margin-left: auto;
     margin-right: auto;
     max-width: 900px;
     width: 100%;
+    div, input{
+      overflow: visible\9;
+      padding: 5px\9;
+    }
     .form-item-islandora-simple-search-query input{
       width: 100%;
       padding-left: 30px;
       line-height: 2em;
       border: 1px solid grey;
       border-radius: 3px;
+      overflow: visible;
     }
     .form-submit {
       float: left;
@@ -34,6 +47,56 @@
       a{
         text-decoration: none;
       }
+    }
+  }
+}
+
+.not-front{
+  .header-inner-wrapper{
+    .header__region{
+      input.form-submit{
+        margin-top: 2px\9 !important;
+        margin-left: 7px\9 !important;
+      }
+      div.form-type-textfield{
+        padding: 5px\9;
+        font-size: 130%\9 !important;
+      }
+      input{
+        line-height:100% \0/ !important;
+      }
+    }
+  }
+}
+
+@media screen\0 {
+  table.islandora-bookmark-solr-results{
+    thead{
+      tr{
+        width: 30px !important;
+        th.select-all{
+          margin-top: 6px;
+          float: left;
+        }
+        th{
+          float: left;
+          padding-top: 5px;
+        }
+        th:nth-child(2) {
+          padding-top: 10px;
+        }
+      }
+    }
+    tbody{
+      width: 100%;
+      tr{
+        td:nth-child(1) {
+          padding-right: 10px;
+        }
+      }
+    }
+    table{
+      width: 100%;
     }
   }
 }
