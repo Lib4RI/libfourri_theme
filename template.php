@@ -399,12 +399,12 @@ function libfourri_theme_search_result_citation($pid, $value) {
  * Implements hook_block_view_alter().
  */
 function libfourri_theme_block_view_alter(&$data, $block) {
-  $arg = explode('/', drupal_get_path_alias());
-  if ($arg[3] != NULL) {
+  if (arg(3) != NULL) {
     if (in_array($block->delta , array(
       'lib4ridora_full_text',
       'lib4ridora_related_research',
-      'publication_links-block'))) {
+      'publication_links-block')) &&
+      (strcmp($block->module, "lib4ridora") === 0) || (strcmp($block->module, "views") === 0)) {
       unset($data['subject']);
       unset($data['content']);
     }

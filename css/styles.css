@@ -2473,25 +2473,30 @@ fieldset.islandora-metadata legend span {
 }
 
 /* line 37, ../sass/components/_object_page.scss */
+.tabs-primary, .tabs-secondary {
+  background-image: none;
+}
+
+/* line 40, ../sass/components/_object_page.scss */
 .islandora-metadata dt, .islandora-metadata dd {
   border: none;
 }
 
-/* line 42, ../sass/components/_object_page.scss */
+/* line 45, ../sass/components/_object_page.scss */
 .ir_citationCModel div.form-item {
   display: table;
   width: 100%;
 }
-/* line 45, ../sass/components/_object_page.scss */
+/* line 48, ../sass/components/_object_page.scss */
 .ir_citationCModel div.form-item label {
   display: table-cell;
   width: 20.625%;
 }
-/* line 49, ../sass/components/_object_page.scss */
+/* line 52, ../sass/components/_object_page.scss */
 .ir_citationCModel div.form-item div.csl-bib-body, .ir_citationCModel div.form-item a {
   display: table-cell;
 }
-/* line 53, ../sass/components/_object_page.scss */
+/* line 56, ../sass/components/_object_page.scss */
 .ir_citationCModel fieldset {
   padding-left: 0em;
   padding-right: 0em;

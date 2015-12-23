@@ -42,8 +42,6 @@
   <?php endif; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <script type="text/javascript" src="<?php print drupal_get_path('theme', 'libfourri_theme'); ?>/respond/respond.min.js"></script>
-  <script type="text/javascript" src="<?php print drupal_get_path('theme', 'libfourri_theme'); ?>/respond/html5shiv.js"></script>
   <?php if ($skip_link_text && $skip_link_anchor): ?>
     <p id="skip-link">
       <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
