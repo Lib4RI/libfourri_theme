@@ -174,6 +174,9 @@ function libfourri_theme_form_islandora_solr_range_slider_form_alter(&$form, &$f
   $form['range_slider_submit']['#suffix'] = "</div>";
 }
 
+function libfourri_theme_form_islandora_scholar_citation_select_form_alter(&$form, &$form_state, $form_id) {
+  $form['citation_select']['#title'] = "";
+}
 /**
  * Implements hook_form_alter().
  */
