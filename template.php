@@ -177,6 +177,13 @@ function libfourri_theme_form_islandora_solr_range_slider_form_alter(&$form, &$f
 /**
  * Implements hook_form_alter().
  */
+function libfourri_theme_form_islandora_scholar_citation_select_form_alter(&$form, &$form_state, $form_id) {
+  $form['citation_select']['#title'] = "";
+}
+
+/**
+ * Implements hook_form_alter().
+ */
 function libfourri_theme_form_islandora_solr_date_filter_form_alter(&$form, &$form_state, $form_id) {
   $form['date_filter']['date_filter_submit']['#prefix'] = "<div class='date-filter-button-wrapper'>";
   $form['date_filter']['date_filter_submit']['#suffix'] = "</div>";
