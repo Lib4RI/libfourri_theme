@@ -2934,60 +2934,61 @@ fieldset.islandora-metadata legend span {
   /* line 33, ../sass/_print.scss */
   .page__title.title {
     font-size: 1.25em;
+    padding-bottom: 1.5em;
   }
 
   /* line 37, ../sass/_print.scss */
-  .ir-citationCModel h1#page-title {
+  #islandora-scholar-citation-select-form {
     display: none;
   }
 
-  /* line 42, ../sass/_print.scss */
+  /* line 41, ../sass/_print.scss */
   div.bib-detail-record a {
     display: none !important;
   }
 
-  /* line 46, ../sass/_print.scss */
+  /* line 45, ../sass/_print.scss */
   li a.remove-query {
     display: none !important;
   }
 
-  /* line 49, ../sass/_print.scss */
+  /* line 48, ../sass/_print.scss */
   fieldset {
     margin: 0 !important;
     padding: 0em !important;
   }
 
-  /* line 53, ../sass/_print.scss */
+  /* line 52, ../sass/_print.scss */
   .form-item {
     margin-top: .25em !important;
     margin-bottom: .25em !important;
   }
 
   /* Underline all links. */
-  /* line 58, ../sass/_print.scss */
+  /* line 57, ../sass/_print.scss */
   a:link,
   a:visited {
     text-decoration: underline;
     /* Don't underline header. */
   }
-  /* line 63, ../sass/_print.scss */
+  /* line 62, ../sass/_print.scss */
   a:link.header__site-link,
   a:visited.header__site-link {
     text-decoration: none !important;
   }
 
-  /* line 67, ../sass/_print.scss */
+  /* line 66, ../sass/_print.scss */
   tr {
     border: none !important;
     border-bottom-color: transparent !important;
   }
 
-  /* line 71, ../sass/_print.scss */
+  /* line 70, ../sass/_print.scss */
   table.islandora-bookmark-solr-results tr.even, table.islandora-bookmark-solr-results tr.odd {
     border-bottom-color: transparent !important;
   }
 
-  /* line 74, ../sass/_print.scss */
+  /* line 73, ../sass/_print.scss */
   a {
     color: black !important;
     text-decoration: none !important;
@@ -2995,32 +2996,32 @@ fieldset.islandora-metadata legend span {
     text-decoration-style: solid !important;
   }
 
-  /* line 80, ../sass/_print.scss */
+  /* line 79, ../sass/_print.scss */
   tr a {
     text-decoration: none !important;
     text-decoration-line: none !important;
   }
 
-  /* line 84, ../sass/_print.scss */
+  /* line 83, ../sass/_print.scss */
   #content {
     /* Add visible URL after links. */
     /* Only display useful links. */
     /* Add visible title after abbreviations. */
   }
-  /* line 86, ../sass/_print.scss */
+  /* line 85, ../sass/_print.scss */
   #content a[href]:after {
     /*       content: " (" attr(href) ")"; */
     font-weight: normal;
     font-size: 16px;
   }
-  /* line 93, ../sass/_print.scss */
+  /* line 92, ../sass/_print.scss */
   #content a[href^="javascript:"]:after,
   #content a[href^="#"]:after {
     content: "";
   }
 
   /* Un-float the content. */
-  /* line 104, ../sass/_print.scss */
+  /* line 103, ../sass/_print.scss */
   #content {
     float: none !important;
     width: 100% !important;
@@ -3029,7 +3030,7 @@ fieldset.islandora-metadata legend span {
   }
 
   /* Turn off any background colors or images. */
-  /* line 112, ../sass/_print.scss */
+  /* line 111, ../sass/_print.scss */
   body,
   #page,
   #main,
@@ -3040,7 +3041,7 @@ fieldset.islandora-metadata legend span {
   }
 
   /* Hide sidebars and nav elements. */
-  /* line 122, ../sass/_print.scss */
+  /* line 121, ../sass/_print.scss */
   #skip-link,
   #toolbar,
   #navigation,
