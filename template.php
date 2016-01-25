@@ -146,7 +146,7 @@ function libfourri_theme_preprocess_block(&$variables) {
   if ($variables['block']->delta === 'current_query_facet_name') {
     // Not a huge fan of this, but it is hard coded in the islandora_solr module.
     $variables['content'] = str_replace("Enabled Filters", "Active Filters", $variables['content']);
-    $variables['content'] = str_replace("<h3>Query</h3>", "<h3>Your Search</h3>", $variables['content']);
+   // $variables['content'] = str_replace("<h3>Query</h3>", "<h3>Your Search</h3>", $variables['content']);
   }
 }
 
@@ -424,10 +424,10 @@ function libfourri_theme_block_view_alter(&$data, $block) {
 function libfourri_theme_tablesort_indicator($variables) {
   $theme_path = path_to_theme();
   if ($variables['style'] == "asc") {
-    return theme('image', array('path' => "$theme_path/images/caret_up.png", 'alt' => t('sort ascending'), 'title' => t('sort ascending')));
+    return theme('image', array('path' => "$theme_path/images/caret_down.png", 'alt' => t('sort ascending'), 'title' => t('sort descending')));
   }
   else {
-    return theme('image', array('path' => "$theme_path/images/caret_down.png", 'alt' => t('sort descending'), 'title' => t('sort descending')));
+    return theme('image', array('path' => "$theme_path/images/caret_up.png", 'alt' => t('sort descending'), 'title' => t('sort ascending')));
   }
 }
 
