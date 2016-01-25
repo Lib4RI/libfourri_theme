@@ -32,11 +32,10 @@
   }
   .page__title.title {
     font-size: 1.25em;
+    padding-bottom: 1.5em;
   }
-  .ir-citationCModel{
-    h1#page-title{
-      display: none;
-    }
+  #islandora-scholar-citation-select-form{
+    display: none;
   }
   div.bib-detail-record{
     a{
