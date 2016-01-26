@@ -63,11 +63,15 @@ header{
           line-height: 2em;
           border: 1px solid grey;
           border-radius: 3px;
+          padding-top: 3px\0 !important;
+          padding-bottom: 3px\0 !important;
+          line-height: normal\0 !important;
         }
         input.form-submit {
           position: absolute;
           left: 0;
           top: 4px;
+          top: 8px\0;
           margin-bottom: 0px;
           margin-top: 0px;
           margin-left: 3px;
