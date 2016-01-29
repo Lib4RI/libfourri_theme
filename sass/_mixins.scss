@@ -35,3 +35,19 @@
     @include element-invisible-off;
   }
 }
+
+@mixin grid($columns: 2, $tag: "div") {
+  #{$tag} {
+    width: 100% / $columns;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    float: left;
+    margin-right: 0px;
+  }
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+    *zoom: 1;
+  }
+}
