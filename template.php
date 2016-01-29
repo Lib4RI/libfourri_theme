@@ -100,6 +100,74 @@ function libfourri_theme_form_islandora_solr_simple_search_form_alter(&$form, &$
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function libfourri_theme_form_islandora_solr_advanced_search_form_alter(&$form, &$form_state, $form_id) {
+  $form['terms'][0]['field']['#attributes'] = array('class' => array('advanced-search-select-field'));
+  $form['terms'][0]['search']['#attributes'] = array('class' => array('advanced-search-text-field'));
+
+  $form['terms'][0]['add']['#attributes']['class'] = array('advanced-search-add');
+  $form['terms'][0]['remove']['#attributes']['class'] = array('advanced-search-remove');
+
+  $form['terms'][0]['remove']['#attributes']['class'] = array('advanced-search-remove');
+  if (isset($form['terms'][0]['boolean'])) {
+    $form['terms'][0]['boolean']['#prefix'] = "<div class='advanced-search-and'>";
+    $form['terms'][0]['boolean']['#weight'] = -1;
+  }
+  $form['year']['select']['#prefix'] = "<div class='from-to-wrapper-select'>" .
+    '<label for="edit-year-select">Year </label>' . "</div><div class='from-to-wrapper'>";
+
+  $form['year']['from']['#attributes'] = array('size' => 15);
+
+  $form['year']['to']['#attributes'] = array('size' => 15);
+  $form['year']['to']['#suffix'] = "</div>";
+
+  $cnt = 0;
+  foreach ($form['terms'] as $key => &$value) {
+    if (is_int($key)) {
+      $cnt += 1;
+    }
+  }
+  $total = 0;
+  foreach ($form['terms'] as $key => &$value) {
+    if (is_int($key)) {
+      $total += 1;
+      if (isset($value['boolean']) && (($total + 1) <= $cnt)) {
+        $value['boolean']['#prefix'] = "<div class='advanced-search-and'>";
+        $value['boolean']['#weight'] = -1;
+
+        $form['terms'][$key + 1]['boolean'] = $value['boolean'];
+        if ($total == 1) {
+          $value['boolean'] = NULL;
+        }
+      }
+
+      $value['#prefix'] = "<div class='field-outer-wrap'><div class='and-placeholder'></div>";
+      $value['#suffix'] = "";
+
+      $value['field']['#prefix'] = "<div class='field-term-wrap'>";
+
+      if (isset($value['remove'])) {
+        $value['remove']['#suffix'] = "</div></div>";
+      }
+      else {
+        $value['add']['#suffix'] = "</div></div>";
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook theme_preprocess_block().
+ */
+function libfourri_theme_preprocess_block(&$variables) {
+  if ($variables['block']->delta === 'current_query_facet_name') {
+    // Not a huge fan of this, but it is hard coded in the islandora_solr module.
+    $variables['content'] = str_replace("Enabled Filters", "Active Filters", $variables['content']);
+  }
+}
+
+/**
  * Implements hook_preprocess_html().
  */
 function libfourri_theme_preprocess_html(&$vars) {
@@ -137,17 +205,6 @@ function libfourri_theme_preprocess_page(&$variables) {
  */
 function libfourri_theme_preprocess_islandora_solr_wrapper(&$variables) {
   libfourri_theme_process_global_header($variables);
-}
-
-/**
- * Implements hook theme_preprocess_block().
- */
-function libfourri_theme_preprocess_block(&$variables) {
-  if ($variables['block']->delta === 'current_query_facet_name') {
-    // Not a huge fan of this, but it is hard coded in the islandora_solr module.
-    $variables['content'] = str_replace("Enabled Filters", "Active Filters", $variables['content']);
-   // $variables['content'] = str_replace("<h3>Query</h3>", "<h3>Your Search</h3>", $variables['content']);
-  }
 }
 
 /**

@@ -1,0 +1,179 @@
+/**
+ * @file
+ * Contains layout styles for the advanced search block.
+ */
+
+.bottom-border{
+  border-bottom: 2px solid grey;
+}
+.inline-block-display{
+  display: inline-block;
+}
+#islandora-solr-advanced-terms{
+  @extend .bottom-border;
+  > div{
+    .form-type-select, .form-type-textfield{
+      width: 40%;
+      margin-right: 0px;
+      select, input{
+        width: 100%;
+      }
+    }
+    .form-type-textfield{
+    }
+    .advanced-search-add{
+    
+    }
+    .advanced-search-remove{
+    
+    }
+    
+  }
+}
+
+#lib4ridora-year-range, #lib4ri-advanced-search-pub-type, #lib4ri-advanced-search-org-unit, #lib4ri-advanced-search-peer-review, #lib4ri-advanced-search-full-text{
+  @extend .bottom-border;
+}
+
+#lib4ri-advanced-search-org-unit > div{
+  width: 100%;
+  #edit-org-unit{
+    width: 70%;
+  }
+  >* {
+    display: inline-block;
+  }
+}
+
+#lib4ri-advanced-search-peer-review, #lib4ri-advanced-search-full-text, #lib4ri-advanced-search-pub-type{
+  > div.form-item{
+    display: table;
+    width: 100%;
+    > *{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    div#edit-peer-review{
+      margin-right: 3%;
+    }
+  }
+}
+
+
+
+
+
+
+
+/* Year Styling*/
+#lib4ridora-year-range{
+  >div{
+    width: 30%;
+  }
+  >div.form-item{
+    >*{
+      display: inline-block;
+    }
+  }
+  .form-type-select{
+    > *{
+      display: inline-block;
+    }
+  }
+  .form-item-year-from{
+  
+  }
+  .form-item-year-to{
+  
+  }
+}
+
+
+
+
+
+
+
+
+#islandora-solr-advanced-search-form{
+  .form-item{
+    label{
+      min-width: 22%;
+    }
+  }
+}
+
+#edit-pub-type .form-item {
+  float: left;
+  width: 20%;
+}
+
+
+/*The following needs to be updated badly*/
+@import "zen";
+
+$zen-column-count: 20;
+$zen-gutter-width: 5px;
+$zen-auto-include-item-base: true;
+ 
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(200%);
+  -ms-transform: translateY(200%);
+  transform: translateY(200%);
+}
+
+#islandora-solr-advanced-terms>div{
+  @include zen-grid-container;
+  div:not(:last-child).form-type-select{
+    @include zen-grid-item(8, 1);
+    select{
+      width: 100%;
+    }
+  }
+  div.form-type-textfield{
+    @include zen-grid-item(8, 9);
+    input{
+      width: 100%;
+    }
+  }
+  input[value="+"]{
+    @include zen-grid-item(1, 17);
+    @include vertical-align();
+    background: image-url("add.png");
+    background-repeat: no-repeat;
+    width:24px;
+    height:24px;
+    border: 0;
+    text-indent: -9999px;
+  }
+  input[value="-"]{
+    @include zen-grid-item(1, 18);
+    @include vertical-align();
+    background: image-url("rounded.png");
+    background-repeat: no-repeat;
+    width:24px;
+    height:24px;
+    border: 0;
+    text-indent: -9999px;
+  }
+  div:last-child.form-type-select{
+    @include zen-grid-item(2, 19);
+    position: relative;
+    top: 4.5%;
+    -webkit-transform: translateY(135%);
+    -ms-transform: translateY(135%);
+    transform: translateY(135%);
+    select{
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+/* .islandora-solr-advanced-controls{ */
+/*   float: right; */
+/* } */

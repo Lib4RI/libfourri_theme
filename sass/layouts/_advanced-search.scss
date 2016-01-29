@@ -1,0 +1,95 @@
+@import "zen";
+
+$zen-column-count: 7;
+$zen-gutter-width: 5px;
+$zen-auto-include-item-base: true;
+
+.icon-image{
+  background-repeat: no-repeat;
+  width:24px;
+  height:24px;
+  border: 0;
+  text-indent: -9999px;
+  margin-right: 8px;
+}
+
+#islandora-solr-advanced-search-form{
+  #lib4ri-advanced-search-pub-type,
+  #lib4ri-advanced-search-org-unit,
+  #lib4ri-advanced-search-peer-review,
+  #lib4ri-advanced-search-full-text{
+    > div{
+      @include zen-grid-container;
+      width: 100%;
+      > label{
+        @include zen-grid-item(2, 1);
+      }
+      > div, > select{
+        @include zen-grid-item(5, 3);
+      }
+    }
+  }
+  #lib4ridora-year-range{
+    @include zen-grid-container;
+    width: 100%;
+    div.from-to-wrapper-select{
+      @include zen-grid-item(2, 1);
+      padding-top: 24px;
+    }
+    div.from-to-wrapper{
+      @include zen-grid-item(5, 3);
+      div.form-item-year-select{
+        label{
+          display: none;
+        }
+      }
+      .form-item-year-from,
+      .form-item-year-to{
+        margin-top: .25em;
+      }
+    }
+    label{
+      display: block;
+    }
+  }
+  #islandora-solr-advanced-terms{
+    >div.field-outer-wrap{
+      @include zen-grid-container;
+      div.advanced-search-and{
+        @include zen-grid-item(2, 1);
+      }
+      div.field-term-wrap{
+        @include zen-grid-item(5, 3);
+        input[value="+"]{
+          @extend .icon-image;
+          background: image-url("add.png");
+        }
+        input[value="-"]{
+          @extend .icon-image;
+          background: image-url("rounded.png");
+        }
+        > div{
+          margin-top: .25em;
+        }
+      }
+    }
+  }
+  .form-item-peer-review,
+  .form-item-full-text{
+    #edit-peer-review,
+    #edit-full-text{
+      @include grid(3, 'div');
+    }
+  }
+  #edit-pub-type{
+    @include grid(3, 'div');
+  }
+  > div{
+    > div:not(.islandora-solr-advanced-controls){
+      border-bottom: 2px solid grey;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+}
