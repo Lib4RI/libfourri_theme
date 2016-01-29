@@ -3091,6 +3091,11 @@ fieldset.islandora-metadata legend span {
 /* line 71, ../sass/layouts/_advanced-search.scss */
 #islandora-solr-advanced-search-form #islandora-solr-advanced-terms > div.field-outer-wrap div.field-term-wrap > div {
   margin-top: .25em;
+  min-width: 30%;
+}
+/* line 74, ../sass/layouts/_advanced-search.scss */
+#islandora-solr-advanced-search-form #islandora-solr-advanced-terms > div.field-outer-wrap div.field-term-wrap > div select, #islandora-solr-advanced-search-form #islandora-solr-advanced-terms > div.field-outer-wrap div.field-term-wrap > div input {
+  width: 100%;
 }
 /* line 40, ../sass/_mixins.scss */
 #islandora-solr-advanced-search-form .form-item-peer-review #edit-peer-review div,
@@ -3128,7 +3133,7 @@ fieldset.islandora-metadata legend span {
   clear: both;
   *zoom: 1;
 }
-/* line 88, ../sass/layouts/_advanced-search.scss */
+/* line 92, ../sass/layouts/_advanced-search.scss */
 #islandora-solr-advanced-search-form > div > div:not(.islandora-solr-advanced-controls) {
   border-bottom: 2px solid grey;
 }

@@ -70,6 +70,10 @@ $zen-auto-include-item-base: true;
         }
         > div{
           margin-top: .25em;
+          min-width: 30%;
+          select, input{
+            width: 100%;
+          }
         }
       }
     }
