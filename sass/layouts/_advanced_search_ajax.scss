@@ -1,0 +1,22 @@
+/**
+ * @file
+ * Advanced layout for AJAX returned "AND", "OR" and "NOT" operations,
+ * required to match the layout in the initial mockup.
+ */
+
+@import "zen";
+
+$zen-column-count: 7;
+$zen-gutter-width: 5px;
+$zen-auto-include-item-base: true;
+
+#islandora-solr-advanced-terms{
+  @include zen-grid-container;
+  .advanced-search-and{
+    @include zen-grid-item(2, 1);
+    @include zen-clear();
+  }
+  .field-outer-wrap{
+     @include zen-grid-item(5, 3);
+  }
+}

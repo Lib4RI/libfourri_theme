@@ -110,10 +110,16 @@ function libfourri_theme_form_islandora_solr_advanced_search_form_alter(&$form, 
   $form['terms'][0]['remove']['#attributes']['class'] = array('advanced-search-remove');
 
   $form['terms'][0]['remove']['#attributes']['class'] = array('advanced-search-remove');
-  if (isset($form['terms'][0]['boolean'])) {
-    $form['terms'][0]['boolean']['#prefix'] = "<div class='advanced-search-and'>";
-    $form['terms'][0]['boolean']['#weight'] = -1;
+
+  foreach ($form['terms'] as $key => $value) {
+    if (is_int($key)) {
+      if (isset($value['boolean'])) {
+        $form['terms'][$key]['boolean']['#prefix'] = "<div class='advanced-search-and'>";
+        $form['terms'][$key]['boolean']['#suffix'] = "</div>";
+      }
+    }
   }
+
   $form['year']['select']['#prefix'] = "<div class='from-to-wrapper-select'>" .
     '<label for="edit-year-select">Year </label>' . "</div><div class='from-to-wrapper'>";
 
@@ -122,26 +128,8 @@ function libfourri_theme_form_islandora_solr_advanced_search_form_alter(&$form, 
   $form['year']['to']['#attributes'] = array('size' => 15);
   $form['year']['to']['#suffix'] = "</div>";
 
-  $cnt = 0;
   foreach ($form['terms'] as $key => &$value) {
     if (is_int($key)) {
-      $cnt += 1;
-    }
-  }
-  $total = 0;
-  foreach ($form['terms'] as $key => &$value) {
-    if (is_int($key)) {
-      $total += 1;
-      if (isset($value['boolean']) && (($total + 1) <= $cnt)) {
-        $value['boolean']['#prefix'] = "<div class='advanced-search-and'>";
-        $value['boolean']['#weight'] = -1;
-
-        $form['terms'][$key + 1]['boolean'] = $value['boolean'];
-        if ($total == 1) {
-          $value['boolean'] = NULL;
-        }
-      }
-
       $value['#prefix'] = "<div class='field-outer-wrap'><div class='and-placeholder'></div>";
       $value['#suffix'] = "";
 
