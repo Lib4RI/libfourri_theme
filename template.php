@@ -159,6 +159,8 @@ function libfourri_theme_preprocess_html(&$vars) {
     $rep = implode(" ", $object->{'models'});
     $vars['classes_array'][] = str_replace(":", "-", $rep);
   }
+  // DP added following line:
+  $vars['head_title'] = strip_tags(decode_entities($vars['head_title']));
 }
 
 /**
