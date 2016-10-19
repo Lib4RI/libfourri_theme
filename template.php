@@ -425,7 +425,7 @@ function libfourri_theme_search_result_citation($pid, $value) {
   );
 
   $form['citation_solr_result']['detailed_record']['value'] = array(
-    '#markup' => l(t("Detailed Record"), "/islandora/object/{$pid}"),
+    '#markup' => l(t("Detailed Record"), "islandora/object/{$pid}"),
   );
 
   $form['citation_solr_result']['ib4ri_citation_solr_results_citation'] = array(

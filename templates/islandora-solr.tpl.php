@@ -38,12 +38,12 @@
                  <?php print $result['citations']['citation']; ?>
                    <div class="bib-detail-record">
                      <div>
-                     <?php $cit_pid = $result['citations']['pid']; print l("Detailed Record", "/islandora/object/$cit_pid"); ?>
+                     <?php $cit_pid = $result['citations']['pid']; print l("Detailed Record", "islandora/object/$cit_pid"); ?>
                      </div>
                    </div>
                    <div class="bib-versions">
                    <?php foreach ($result['citations']['pdfs'] as $pdf): ?>
-                     <span id="<?php print $pdf['id']; ?>" class="<?php print $pdf['classes']; ?>"><?php print l(ucwords($pdf['version']), "/islandora/object/{$result['citations']['pid']}/datastream/{$pdf['dsid']}/view"); ?></span>
+                     <span id="<?php print $pdf['id']; ?>" class="<?php print $pdf['classes']; ?>"><?php print l(ucwords($pdf['version']), "islandora/object/{$result['citations']['pid']}/datastream/{$pdf['dsid']}/view"); ?></span>
                    <?php endforeach; ?>
                    </div>
                  </div>
