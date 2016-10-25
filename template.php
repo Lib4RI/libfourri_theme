@@ -388,6 +388,11 @@ function libfourri_theme_form_islandora_bookmark_results_form_alter(&$form, &$fo
     '<div class="object-mock-pager">' . $data_array['solr_pager'] . '</div>' .
     '<div class="object-mock-icons">' . $data_array['secondary_display_profiles'] . '</div>' .
     '</div>';
+  $form['islandora_bookmark_table']['#suffix'] = '<div class="object-mock-table-header" style="margin-bottom: 24px;">' .
+    '<div class="select-items">&nbsp;</div>' .
+    '<div class="object-mock-pager">' . $data_array['solr_pager'] . '</div>' .
+    '<div class="object-mock-icons"></div>' .
+    '</div>';
 
   foreach ($form['islandora_bookmark_table']['#options'] as $key => $value) {
     $obj = islandora_object_load($key);
