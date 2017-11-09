@@ -2147,17 +2147,17 @@ footer .inner-footer-wrapper div.block-views .view-footer-logo img {
   }
   /* line 96, ../sass/components/_front_welcome_search.scss */
   table.islandora-bookmark-solr-results thead tr th.select-all {
-    margin-top: 6px;
+    margin-top: 2px;
     float: left;
   }
   /* line 100, ../sass/components/_front_welcome_search.scss */
   table.islandora-bookmark-solr-results thead tr th {
-    float: left;
-    padding-top: 5px;
+    /*float: left;
+    padding-top: 5px;*/
   }
   /* line 104, ../sass/components/_front_welcome_search.scss */
   table.islandora-bookmark-solr-results thead tr th:nth-child(2) {
-    padding-top: 10px;
+    padding-top: 0px;
   }
   /* line 109, ../sass/components/_front_welcome_search.scss */
   table.islandora-bookmark-solr-results tbody {
