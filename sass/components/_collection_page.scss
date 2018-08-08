@@ -159,9 +159,9 @@ dt.islandora-object-thumb {
 }
 
 .secondary-display-csv{
-  margin-top: 3px;
-  padding: 24px 24px 0px 0px;
-  background: image-url('document_csv_small.png');
+  margin-top: 2px;
+  padding: 27px 27px 0px 0px;
+  background: image-url('csv.blue.27x27.png');
   background-size:auto;
   background-repeat: no-repeat;
   width: 0px;
@@ -205,3 +205,14 @@ dl.solr-thumb{
 .solr-thumb.islandora-object-thumb {
   padding-left: 11px;
 }
+
+.secondary-display-xls{
+  margin-top: 2px;
+  padding: 26px 25px 0px 0px;
+  background: image-url('xls.blue.26x25.png');
+  background-size:auto;
+  background-repeat: no-repeat;
+  width: 0px;
+  height: 0px;
+}
+

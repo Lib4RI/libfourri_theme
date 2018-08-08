@@ -2400,9 +2400,23 @@ dt.islandora-object-thumb {
 
 /* line 161, ../sass/components/_collection_page.scss */
 .secondary-display-csv {
-  margin-top: 3px;
-  padding: 24px 24px 0px 0px;
-  background: url('../images/document_csv_small.png?1447186295');
+/*  margin-top: 3px;  */
+/*  padding: 24px 24px 0px 0px;  */
+/*  background: url('../images/document_csv_small.png?1447186295');  */
+  margin-top: 2px;
+  padding: 27px 27px 0px 0px;
+  background: url('../images/csv.blue.27x27.png');	/* image source: https://commons.wikimedia.org/wiki/File:Text-csv-text.svg */
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 0px;
+  height: 0px;
+}
+
+/* line 209, ../sass/components/_collection_page.scss */
+.secondary-display-xls {
+  margin-top: 2px;
+  padding: 26px 25px 0px 0px;
+  background: url('../images/xls.blue.26x25.png');	/* image source: image source: https://commons.wikimedia.org/wiki/File:Microsoft_Excel_2013_logo.svg */
   background-size: auto;
   background-repeat: no-repeat;
   width: 0px;
