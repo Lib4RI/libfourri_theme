@@ -2389,6 +2389,7 @@ dt.islandora-object-thumb {
 /* } */
 /* line 151, ../sass/components/_collection_page.scss */
 .secondary-display-rss {
+/*  margin-top: 3px;  */
   margin-top: 4px;
   padding: 24px 24px 0px 0px;
   background: url('../images/rss_small.png?1447186234');
@@ -2403,7 +2404,7 @@ dt.islandora-object-thumb {
 /*  margin-top: 3px;  */
 /*  padding: 24px 24px 0px 0px;  */
 /*  background: url('../images/document_csv_small.png?1447186295');  */
-  margin-top: 1px;
+  margin-top: 3px;
   padding: 27px 27px 0px 0px;
   background: url('../images/csv.blue.27x26.png');	/* image source: https://commons.wikimedia.org/wiki/File:Text-csv-text.svg */
   background-size: auto;
@@ -2415,8 +2416,8 @@ dt.islandora-object-thumb {
 
 /* line 210, ../sass/components/_collection_page.scss */
 .secondary-display-xls {
-  margin-top: 4px;
-  padding: 26px 26px 0px 0px;
+  margin-top: 3px;
+  padding: 26px 27px 0px 0px;
   background: url('../images/xls.blue.26x25.png');	/* image source: image source: https://commons.wikimedia.org/wiki/File:Microsoft_Excel_2013_logo.svg */
   background-size: auto;
   background-repeat: no-repeat;
