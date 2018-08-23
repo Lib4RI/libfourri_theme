@@ -2390,8 +2390,9 @@ dt.islandora-object-thumb {
 /* line 151, ../sass/components/_collection_page.scss */
 .secondary-display-rss {
 /*  margin-top: 3px;  */
+/*    padding: 24px 24px 0px 0px;  */
   margin-top: 4px;
-  padding: 24px 24px 0px 0px;
+  padding: 24px 26px 0px 0px;
   background: url('../images/rss_small.png?1447186234');
   background-size: auto;
   background-repeat: no-repeat;
