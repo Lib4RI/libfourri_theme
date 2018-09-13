@@ -15,6 +15,8 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 	$imgType = "";
 	
 	if ( !( $cssAry = file( $modPath.$cssFile ) ) ) {
+		echo $modPath.$cssFile;
+		exit;
 		$txtError = "File 'styles.css' not found";
 	} else {
 		foreach( $cssAry as $cssRow ) {
@@ -41,7 +43,7 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 
 		if ( empty($imgType) ) {
 			$txtError = "class '{$cssClass}' not found";
-		} elseif ( @!file_exists($modPath.$imgPath) ) {
+		} elseif ( @!is_file($modPath.$imgPath) ) {
 			$txtError = "file '{$imgPath}' not found";
 		} else {
 			header( "Content-type: image/" . ( $imgType == "jpg" ? "jpeg" : $imgType ) );
