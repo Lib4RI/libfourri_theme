@@ -14,34 +14,42 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 	$imgPath = "";
 	$imgType = "";
 	
-	if ( !( $cssAry = file( $modPath.$cssFile ) ) ) {
+	if ( !( $cssRow = file_get_contents( $modPath.$cssFile ) ) ) {
 		$txtError = "File 'styles.css' not found";
 	} else {
+		if ( substr($cssClass,0,1) != "." && substr($cssClass,0,1) != "#" ) { $cssClass = ".".$cssClass; }
+		
+		$cssAry = explode( "/"."*", $cssRow );		// part 1/2 to get rid of / * comments * /
 		foreach( $cssAry as $cssRow ) {
-			$cssRow = trim($cssRow);
-			if ( empty($cssRow) || substr($cssRow,0,2) == "/"."*" || substr($cssRow,0,2) == "//" ) {
-				continue;		// quite vulnerable to look like this for comments, however should work the way comments are set currenty.
-			}
-			if ( strchr($cssRow,"/"."*") && strchr($cssRow,"*"."/") ) {		// to get rid of / * comments * /
-				$cssRow = str_replace("*"."/","/>",$cssRow);
-				$cssRow = str_replace("/"."*","<tag",$cssRow);
-				$cssRow = strip_tags($cssRow);
+			$cssRow = ( $tmp = strchr($cssRow,"*"."/") ) ? trim(substr($tmp,2)) : trim($cssRow);	// part 2/2 to get rid of / * comments * /
+			if ( empty($cssRow) || substr($cssRow,0,2) == "//" ) {
+				continue;
 			}
 			if ( empty($imgType) ) {
-				if ( strchr($cssRow,".".$cssClass) ) { $imgType = "any"; }
+				if ( strchr($cssRow,$cssClass) ) { $imgType = "any"; }
 				continue;
 			}
 			if ( $imgPath = strchr($cssRow,"url") ) {
-				$imgPath = strtr(substr($imgPath,3),"(\";')","     ");
-				$imgPath = trim( array_shift(explode("//",$imgPath."//",2)) );
-				$imgType = strtolower(substr(strrchr($imgPath,"."),1));
-				break;
+				$imgPath = str_replace(": url", ":url", $cssRow );
+				$imgPath = str_replace("url (", "url(", $imgPath );
+				if ( $imgPath = strchr($imgPath,":url(") ) {
+					// also something like this is possible: url('data:image/png;base64,iVBORw0KGgoAAAANAAAABlBMVEX///8AAABVwtAXRSTlMAQObTkSuQmCC')
+					$imgPath = substr(strchr(strtr($imgPath,"\"","'"),"'"),1);
+					$imgPath = trim( strtok(strtok($imgPath,"'")."?","?") );
+					if ( $cssRow = strrchr($imgPath,".") ) {
+						$imgType = strtolower(substr($cssRow,1));
+						break;
+					}
+				}
 			}
 		}
 
 		if ( empty($imgType) ) {
-			$txtError = "class '{$cssClass}' not found";
+			$txtError = "class '" . substr($cssClass,1) . "' not found";
 		} elseif ( @!file_exists($modPath.$imgPath) ) {
+					echo $modPath.$imgPath;
+					exit;
+
 			$txtError = "file '{$imgPath}' not found";
 		} else {
 			header( "Content-type: image/" . ( $imgType == "jpg" ? "jpeg" : $imgType ) );
@@ -54,9 +62,9 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 
 // show an error image:
 header( "Content-type: image/png" );
-$im = imagecreate(400,120);
+$im = imagecreate(640,120);
 imagecolorallocate($im, 31, 159, 191);		// background color
-imagestring($im, 8, 50, 25,  "*** Lib4RI image placeholder ***", imagecolorallocate($im, 0, 15, 127) );
+imagestring($im, 8, 20, 25,  "*** Lib4RI image placeholder ***", imagecolorallocate($im, 0, 15, 127) );
 $tColor = imagecolorallocate($im, 143, 15, 0);
 imagestring($im, 8, 20, 55,  "ERROR:", $tColor);
 imagestring($im, 8, 20, 70,  $txtError, $tColor);
