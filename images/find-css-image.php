@@ -1,7 +1,10 @@
 <?php
 
-// this is an *auxiliary* PHP page/tool to find the image that belongs to a given CSS class, since there seems to be
-// no way to add a CSS file in a Durpal content node/page when we only can (want to) use the 'Full HTML' editing mode.
+// Issue:
+// - Editing a Durpal content node/page with 'Full HTML' editing mode has problems sometimes with *relative* site paths
+//   resp. relative URL addresses for images and CSS files. Also the 'Preview mode' may suffer with problem.
+// Work-around:
+// - This is an *auxiliary* PHP page/tool to find the image that belongs to a given CSS class.
 
 $txtError = "CSS class needed: ?cl=className";
 
@@ -12,7 +15,7 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 	$cssFile = "../css/styles.css";		// assuming the css folder in in the same level as the folder this file here is contained.
 
 	$imgPath = "";
-	$imgType = "";
+	$imgExt = "";
 	
 	if ( !( $cssRow = file_get_contents( $modPath.$cssFile ) ) ) {
 		$txtError = "File '" . basename($cssFile) . "' not found";
@@ -33,34 +36,37 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 			if ( empty($cssRow) || substr($cssRow,0,2) == "//" ) {
 				continue;
 			}
-			if ( empty($imgType) ) {
-				if ( strchr($cssRow,$cssClass) ) { $imgType = "any"; }
+			if ( empty($imgExt) ) {
+				if ( strchr($cssRow,$cssClass) ) { $imgExt = "any"; }
 				continue;
 			}
 			if ( $imgPath = strchr($cssRow,"url") ) {
 				$imgPath = str_replace(": url", ":url", $cssRow );
 				$imgPath = str_replace("url (", "url(", $imgPath );
 				if ( $imgPath = strchr($imgPath,":url(") ) {
-				
 					$imgPath = substr(strchr(strtr($imgPath,"\"","'"),"'"),1);
 					$imgPath = trim( strtok(strtok($imgPath,"'")."?","?") );
-					if ( $cssRow = strrchr($imgPath,".") ) {
-						$imgType = strtolower(substr($cssRow,1));
-						break;
+					if ( $imgExt = strtolower(strrchr($imgPath,".")) ) {
+						if ( strchr( ".png.gif.jpg.jpeg.", $imgExt."." ) ) { break; }
 					}
-
+					$imgExt = "any";
 				}
 			}
 		}
 
-		if ( empty($imgType) ) {
+		if ( empty($imgExt) ) {
 			$txtError = "class '" . substr($cssClass,1) . "' not found";
 		} elseif ( @!file_exists($modPath.$imgPath) ) {
 			$txtError = "file '{$imgPath}' not found";
 		} else {
-			header( "Content-type: image/" . ( $imgType == "jpg" ? "jpeg" : $imgType ) );
-			readfile($modPath.$imgPath);
-			exit;
+			$imgAry = getimagesize($modPath.$imgPath);
+			$imgMime = $imgAry['mime'];
+			if ( $imgMime == "image/png" || $imgMime == "image/gif" || $imgMime == "image/jpg" || $imgMime == "image/jpeg" ) {
+				header( "Content-type: " . $imgMime );
+				readfile($modPath.$imgPath);
+				exit;
+			}
+			$txtError = "Image '{$imgPath}' not accepted";
 		}
 	}
 }
