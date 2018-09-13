@@ -5,7 +5,7 @@
 
 $txtError = "CSS class needed: ?cl=className";
 
-$cssClass = @trim(($_GET['cl']));
+$cssClass = @trim(rawurldecode($_GET['cl']));
 if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 
 	$modPath = dirname($_SERVER['SCRIPT_FILENAME']) . "/";	// = "https://www.dora.lib4ri.ch/eawag/sites/all/themes/libfourri_theme/css/";
@@ -15,13 +15,21 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 	$imgType = "";
 	
 	if ( !( $cssRow = file_get_contents( $modPath.$cssFile ) ) ) {
-		$txtError = "File 'styles.css' not found";
+		$txtError = "File '" . basename($cssFile) . "' not found";
 	} else {
-		if ( substr($cssClass,0,1) != "." && substr($cssClass,0,1) != "#" ) { $cssClass = ".".$cssClass; }
+		if ( substr($cssClass,0,1) != "." && substr($cssClass,0,1) != "#" ) {
+			if ( substr($cssClass,0,1) != " " ) { $cssClass = ".".rtrim($cssClass); }
+			else { $cssClass = trim($cssClass); }
+		}
+
+		$cssAry = explode( "/"."*", $cssRow );		// get rid of / * comments * /
+		foreach( $cssAry as $idx => $row ) {
+			if ( $tmp = strchr($row,"*"."/") ) { $cssAry[$idx] = substr($tmp,2); }
+		}
 		
-		$cssAry = explode( "/"."*", $cssRow );		// part 1/2 to get rid of / * comments * /
+		$cssAry = explode( "\n", implode( "", $cssAry ) );
 		foreach( $cssAry as $cssRow ) {
-			$cssRow = ( $tmp = strchr($cssRow,"*"."/") ) ? trim(substr($tmp,2)) : trim($cssRow);	// part 2/2 to get rid of / * comments * /
+			$cssRow = trim($cssRow);
 			if ( empty($cssRow) || substr($cssRow,0,2) == "//" ) {
 				continue;
 			}
@@ -33,13 +41,14 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 				$imgPath = str_replace(": url", ":url", $cssRow );
 				$imgPath = str_replace("url (", "url(", $imgPath );
 				if ( $imgPath = strchr($imgPath,":url(") ) {
-					// also something like this is possible: url('data:image/png;base64,iVBORw0KGgoAAAANAAAABlBMVEX///8AAABVwtAXRSTlMAQObTkSuQmCC')
+				
 					$imgPath = substr(strchr(strtr($imgPath,"\"","'"),"'"),1);
 					$imgPath = trim( strtok(strtok($imgPath,"'")."?","?") );
 					if ( $cssRow = strrchr($imgPath,".") ) {
 						$imgType = strtolower(substr($cssRow,1));
 						break;
 					}
+
 				}
 			}
 		}
@@ -47,9 +56,6 @@ if ( !empty($cssClass) && strlen($cssClass) < 50 && !strchr($cssClass,"/") ) {
 		if ( empty($imgType) ) {
 			$txtError = "class '" . substr($cssClass,1) . "' not found";
 		} elseif ( @!file_exists($modPath.$imgPath) ) {
-					echo $modPath.$imgPath;
-					exit;
-
 			$txtError = "file '{$imgPath}' not found";
 		} else {
 			header( "Content-type: image/" . ( $imgType == "jpg" ? "jpeg" : $imgType ) );
