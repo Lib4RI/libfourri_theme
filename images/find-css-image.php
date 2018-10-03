@@ -3,8 +3,14 @@
 // Issue:
 // - Editing a Durpal content node/page with 'Full HTML' editing mode has problems sometimes with *relative* site paths
 //   resp. relative URL addresses for images and CSS files. Also the 'Preview mode' may suffer with problem.
+//
 // Work-around:
 // - This is an *auxiliary* PHP page/tool to find the image that belongs to a given CSS class.
+//
+// Examlpe:
+// - instead of this:  /eawag/sites/all/themes/libfourri_theme/images/csv.blue.27x26.png
+// - you can us now :  /eawag/sites/all/themes/libfourri_theme/images/find-css-image.php?cl=secondary-display-csv
+
 
 $txtError = "CSS class needed: ?cl=className";
 
