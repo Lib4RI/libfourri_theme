@@ -2197,6 +2197,10 @@ footer .inner-footer-wrapper div.block-views .view-footer-logo img {
   color: #ebe00f;
 }
 
+.fa.fa-unlock-alt.yellow {
+  color: #ebe00f
+}
+
 /* line 25, ../sass/components/views/_view_recent_additions.scss */
 .published-accepted-links {
   display: inline;
