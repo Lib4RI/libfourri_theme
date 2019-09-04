@@ -2793,29 +2793,75 @@ fieldset.islandora-metadata legend span {
 .view-publication-links .views-field span, .view-publication-links div.libfourri-research-data span, #block-lib4ridora-lib4ridora-related-research .views-field span, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span {
   background: url('../images/launch-2.png?1540992743');
   background-repeat: no-repeat;
-  background-position: 0px 0px;
-  background-size: 20px 20px;
-  width: 20px;
-  height: 20px;
+  background-position: 2px 2px;
+  background-size: 18px 18px;
+  width: 18px;
+  height: 18px;
+  position:relative;
+  left: -3px;
+  white-space: nowrap;
 }
-/* line 16, ../sass/components/views/_block_data_links.scss */
+/* line 18, ../sass/components/views/_block_data_links.scss */
 .view-publication-links .views-field span a, .view-publication-links div.libfourri-research-data span a, #block-lib4ridora-lib4ridora-related-research .views-field span a, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span a {
   padding-left: 1.5em;
 }
 
-/* line 24, ../sass/components/views/_block_data_links.scss */
+/* line 26, ../sass/components/views/_block_data_links.scss */
 #block-lib4ridora-lib4ridora-full-text .lib4ridora-pdf-materials {
-  padding-left: .90em;
+  padding-left: 0.9em;
 }
-/* line 27, ../sass/components/views/_block_data_links.scss */
+/* line 29, ../sass/components/views/_block_data_links.scss */
 #block-lib4ridora-lib4ridora-full-text .lib4ridora-pdf-materials .lib4ridora-pdf-link .availability-text {
-  padding-left: 1em;
+  padding-left: 1.1em;
+  padding-right: 5px;
   display: block;
 }
 
-/* line 35, ../sass/components/views/_block_data_links.scss */
+/* line 38, ../sass/components/views/_block_data_links.scss */
 .lib4ridora-pdf-link {
-  padding-right: .5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  white-space: nowrap;
+}
+
+/* line 44, ../sass/components/views/_block_data_links.scss */
+.lib4ri_space_nowrap {
+  white-space: nowrap;
+}
+
+/* line 48, ../sass/components/views/_block_data_links.scss */
+.lib4ri_space_wrapped {
+  white-space: wrapped;
+}
+
+/* line 52, ../sass/components/views/_block_data_links.scss */
+.lib4ri_sb2_item_indent { /* for text/links inside the 2nd sidebar block, with an icon (here a transparent PNG) within the padded area */
+	display: block;
+	padding-left: 2em; /* 2em ~= 32px, and this must match other/all blocks, and the icon must fit into the padding area */
+	padding-bottom: 0.5em;  /* as in class .views-field */
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='); /* from http://png-pixel.com */
+	background-repeat: no-repeat;	 /* keep, to show/pretend the background item as 'listing' icon */
+	background-position: 12px 4px;
+	background-size: 16px 16px; /* icon url/position/size may change */
+}
+
+/* line 62, ../sass/components/views/_block_data_links.scss */
+.lib4ri_sb2_item_indent_icon { /* Example, same as lib4ri_block_item_indent but with a small green icon/symbol */
+	display: block;
+	padding-left: 2em;
+	padding-bottom: 0.5em;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO02u7xHwAEpgI62/eXhgAAAABJRU5ErkJggg==');
+	background-repeat: no-repeat;
+	background-position: 18px 8px;
+	background-size: 7px 7px;
+}
+
+/* line 73, ../sass/components/views/_block_data_links.scss */
+div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger Almetrics donut within */
+	padding-left: 2em;
+	margin-left: -1px !important;	/* just for convenience, for better over-all impression */
+	width:88px;
+	height:85px;
 }
 
 /**

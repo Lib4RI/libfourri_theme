@@ -9,10 +9,13 @@
     span {
       background: image-url("launch-2.png");
       background-repeat: no-repeat;
-      background-position: 0px 0px;
-      background-size: 20px 20px;
-      width: 20px;
-      height: 20px;
+      background-position: 2px 2px;
+      background-size: 18px 18px;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      left: -3px;
+      white-space: nowrap;
       a {
         padding-left: 1.5em;
       }
@@ -25,7 +28,8 @@
     padding-left: .90em;
     .lib4ridora-pdf-link{
       .availability-text{
-        padding-left: 1em;
+        padding-left: 1.1em;
+        padding-right: 5px;
         display: block;
       }
     }
@@ -34,4 +38,42 @@
 
 .lib4ridora-pdf-link{
   padding-right: .5em;
+  padding-bottom: 0.5em;
+  white-space: nowrap;
 }
+
+.lib4ri_space_nowrap {
+  white-space: nowrap;
+}
+
+.lib4ri_space_wrapped {
+  white-space: wrapped;
+}
+
+.lib4ri_sb2_item_indent {
+  display: block;
+  padding-left: 2em;
+  padding-bottom: 0.5em;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  background-position: 12px 4px;
+  background-size: 16px 16px;
+}
+
+.lib4ri_sb2_item_indent_icon {
+  display: block;
+  padding-left: 2em;
+  padding-bottom: 0.5em;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO02u7xHwAEpgI62/eXhgAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-position: 18px 8px;
+  background-size: 7px 7px;
+}
+
+div.altmetric-embed img {
+	padding-left: 2em;
+	margin-left: -1px !important;
+	width:88px;
+	height:85px;
+}
+
