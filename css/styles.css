@@ -2793,13 +2793,12 @@ fieldset.islandora-metadata legend span {
 .view-publication-links .views-field span, .view-publication-links div.libfourri-research-data span, #block-lib4ridora-lib4ridora-related-research .views-field span, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span {
   background: url('../images/launch-2.png?1540992743');
   background-repeat: no-repeat;
-  background-position: 2px 2px;
+  background-position: 3px 2px;
   background-size: 18px 18px;
   width: 18px;
   height: 18px;
   position:relative;
   left: -3px;
-  white-space: nowrap;
 }
 /* line 18, ../sass/components/views/_block_data_links.scss */
 .view-publication-links .views-field span a, .view-publication-links div.libfourri-research-data span a, #block-lib4ridora-lib4ridora-related-research .views-field span a, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span a {
@@ -2815,26 +2814,31 @@ fieldset.islandora-metadata legend span {
   padding-left: 1.1em;
   padding-right: 5px;
   display: block;
+  white-space: normal;
 }
 
-/* line 38, ../sass/components/views/_block_data_links.scss */
+/* line 39, ../sass/components/views/_block_data_links.scss */
 .lib4ridora-pdf-link {
   padding-right: 0.5em;
   padding-bottom: 0.5em;
-  white-space: nowrap;
 }
 
 /* line 44, ../sass/components/views/_block_data_links.scss */
-.lib4ri_space_nowrap {
+.lib4ridora-pdf-link a {
   white-space: nowrap;
 }
 
 /* line 48, ../sass/components/views/_block_data_links.scss */
+.lib4ri_space_nowrap {
+  white-space: nowrap;
+}
+
+/* line 52, ../sass/components/views/_block_data_links.scss */
 .lib4ri_space_wrapped {
   white-space: wrapped;
 }
 
-/* line 52, ../sass/components/views/_block_data_links.scss */
+/* line 56, ../sass/components/views/_block_data_links.scss */
 .lib4ri_sb2_item_indent { /* for text/links inside the 2nd sidebar block, with an icon (here a transparent PNG) within the padded area */
 	display: block;
 	padding-left: 2em; /* 2em ~= 32px, and this must match other/all blocks, and the icon must fit into the padding area */
@@ -2845,7 +2849,7 @@ fieldset.islandora-metadata legend span {
 	background-size: 16px 16px; /* icon url/position/size may change */
 }
 
-/* line 62, ../sass/components/views/_block_data_links.scss */
+/* line 66, ../sass/components/views/_block_data_links.scss */
 .lib4ri_sb2_item_indent_icon { /* Example, same as lib4ri_block_item_indent but with a small green icon/symbol */
 	display: block;
 	padding-left: 2em;
@@ -2856,7 +2860,7 @@ fieldset.islandora-metadata legend span {
 	background-size: 7px 7px;
 }
 
-/* line 73, ../sass/components/views/_block_data_links.scss */
+/* line 76, ../sass/components/views/_block_data_links.scss */
 div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger Almetrics donut within */
 	padding-left: 2em;
 	margin-left: -1px !important;	/* just for convenience, for better over-all impression */

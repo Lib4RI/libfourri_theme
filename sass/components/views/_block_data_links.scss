@@ -9,13 +9,12 @@
     span {
       background: image-url("launch-2.png");
       background-repeat: no-repeat;
-      background-position: 2px 2px;
+      background-position: 3px 2px;
       background-size: 18px 18px;
       width: 18px;
       height: 18px;
       position: relative;
       left: -3px;
-      white-space: nowrap;
       a {
         padding-left: 1.5em;
       }
@@ -31,6 +30,7 @@
         padding-left: 1.1em;
         padding-right: 5px;
         display: block;
+        white-space: normal;
       }
     }
   }
@@ -39,6 +39,9 @@
 .lib4ridora-pdf-link{
   padding-right: .5em;
   padding-bottom: 0.5em;
+}
+
+.lib4ridora-pdf-link a {
   white-space: nowrap;
 }
 
