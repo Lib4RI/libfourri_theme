@@ -2793,52 +2793,59 @@ fieldset.islandora-metadata legend span {
 .view-publication-links .views-field span, .view-publication-links div.libfourri-research-data span, #block-lib4ridora-lib4ridora-related-research .views-field span, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span {
   background: url('../images/launch-2.png?1540992743');
   background-repeat: no-repeat;
-  background-position: 3px 2px;
+  background-position: 0px 2px;
   background-size: 18px 18px;
   width: 18px;
   height: 18px;
-  position:relative;
-  left: -3px;
 }
-/* line 18, ../sass/components/views/_block_data_links.scss */
-.view-publication-links .views-field span a, .view-publication-links div.libfourri-research-data span a, #block-lib4ridora-lib4ridora-related-research .views-field span a, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span a {
+/* line 16, ../sass/components/views/_block_data_links.scss */
+#block-lib4ridora-lib4ridora-related-research .views-field span a, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span a {
   padding-left: 1.5em;
 }
 
-/* line 26, ../sass/components/views/_block_data_links.scss */
+/* line 18, ../sass/components/views/_block_data_links.scss */
+.view-publication-links .views-field span a, .view-publication-links div.libfourri-research-data span a, #block-lib4ridora-lib4ridora-related-research .views-field span a, #block-lib4ridora-lib4ridora-related-research div.libfourri-research-data span a {
+  padding-left: 1.3em;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 29, ../sass/components/views/_block_data_links.scss */
 #block-lib4ridora-lib4ridora-full-text .lib4ridora-pdf-materials {
   padding-left: 0.9em;
+  display: inline-block;
 }
-/* line 29, ../sass/components/views/_block_data_links.scss */
+/* line 34, ../sass/components/views/_block_data_links.scss */
 #block-lib4ridora-lib4ridora-full-text .lib4ridora-pdf-materials .lib4ridora-pdf-link .availability-text {
   padding-left: 1.1em;
   padding-right: 5px;
-  display: block;
   white-space: normal;
+  display: inline-block;
 }
 
-/* line 39, ../sass/components/views/_block_data_links.scss */
+/* line 43, ../sass/components/views/_block_data_links.scss */
 .lib4ridora-pdf-link {
   padding-right: 0.5em;
   padding-bottom: 0.5em;
 }
 
-/* line 44, ../sass/components/views/_block_data_links.scss */
+/* line 48, ../sass/components/views/_block_data_links.scss */
 .lib4ridora-pdf-link a {
   white-space: nowrap;
 }
 
-/* line 48, ../sass/components/views/_block_data_links.scss */
+/* line 52, ../sass/components/views/_block_data_links.scss */
 .lib4ri_space_nowrap {
   white-space: nowrap;
 }
 
-/* line 52, ../sass/components/views/_block_data_links.scss */
+/* line 56, ../sass/components/views/_block_data_links.scss */
 .lib4ri_space_wrapped {
   white-space: wrapped;
 }
 
-/* line 56, ../sass/components/views/_block_data_links.scss */
+/* line 60, ../sass/components/views/_block_data_links.scss */
 .lib4ri_sb2_item_indent { /* for text/links inside the 2nd sidebar block, with an icon (here a transparent PNG) within the padded area */
 	display: block;
 	padding-left: 2em; /* 2em ~= 32px, and this must match other/all blocks, and the icon must fit into the padding area */
@@ -2849,7 +2856,7 @@ fieldset.islandora-metadata legend span {
 	background-size: 16px 16px; /* icon url/position/size may change */
 }
 
-/* line 66, ../sass/components/views/_block_data_links.scss */
+/* line 70, ../sass/components/views/_block_data_links.scss */
 .lib4ri_sb2_item_indent_icon { /* Example, same as lib4ri_block_item_indent but with a small green icon/symbol */
 	display: block;
 	padding-left: 2em;
@@ -2860,12 +2867,13 @@ fieldset.islandora-metadata legend span {
 	background-size: 7px 7px;
 }
 
-/* line 76, ../sass/components/views/_block_data_links.scss */
+/* line 80, ../sass/components/views/_block_data_links.scss */
 div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger Almetrics donut within */
 	padding-left: 2em;
-	margin-left: -1px !important;	/* just for convenience, for better over-all impression */
 	width:88px;
 	height:85px;
+	margin-left: -1px !important;	/* just for convenience, for better over-all impression */
+	padding-bottom: 2px;		/* actually it should be rather 6px, but it looks much better like this when the round donut is above */
 }
 
 /**
