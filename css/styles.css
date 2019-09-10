@@ -2826,8 +2826,8 @@ fieldset.islandora-metadata legend span {
 
 /* line 43, ../sass/components/views/_block_data_links.scss */
 .lib4ridora-pdf-link {
-  padding-right: 0.5em;
-  padding-bottom: 0.5em;
+  padding-right: .5em;
+  padding-bottom: .5em;
 }
 
 /* line 48, ../sass/components/views/_block_data_links.scss */
@@ -2870,8 +2870,8 @@ fieldset.islandora-metadata legend span {
 /* line 80, ../sass/components/views/_block_data_links.scss */
 div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger Almetrics donut within */
 	padding-left: 2em;
-	width:88px;
-	height:85px;
+	width:98px;
+	height:94px;
 	margin-left: -1px !important;	/* just for convenience, for better over-all impression */
 	padding-bottom: 2px;		/* actually it should be rather 6px, but it looks much better like this when the round donut is above */
 }
