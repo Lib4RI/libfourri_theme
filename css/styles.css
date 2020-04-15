@@ -2975,6 +2975,7 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 /* line 92, ../sass/components/_search_results.scss */
 .not-front .lib4ridora-pdf-materials > div {
   display: inline-block;
+  white-space: nowrap;
 }
 /* line 95, ../sass/components/_search_results.scss */
 .not-front .ib4ri-citation-solr-results-citation {

@@ -29,7 +29,9 @@
   .lib4ridora-pdf-materials{
     padding-left: .90em;
     display: inline-block;
+    white-space: nowrap;
     .lib4ridora-pdf-link{
+       white-space: nowrap;
       .availability-text{
         padding-left: 1.1em;
         padding-right: 5px;

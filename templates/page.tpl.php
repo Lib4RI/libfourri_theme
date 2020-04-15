@@ -15,7 +15,16 @@
 
     <?php if ($logo): ?>
     <div class="logo-wrapper">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <a href="<?php
+      	// adding the a link to the institutes the logo stands for (see Jour Fixe 2020-04-15):
+      	if ( empty($logo) ) {
+			print $front_page;		// matches original code
+		} else {
+			$inst = trim($front_page,'./');		// same as name-space!(?)
+			echo 'https://www.' . ( empty($inst) ? 'lib4ri' : $inst ) . '.ch';
+			$inst = ( empty($inst) ? 'Lib4RI' : ( strlen($inst) < 4 ? strtoupper($inst) : ucfirst(strtolower($inst)) ) );
+		}
+		?>" title="<?php print t($inst); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t($inst); ?>" class="header__logo-image" /></a>
     </div>
     <?php endif; ?>
 
