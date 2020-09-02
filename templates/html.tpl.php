@@ -14,27 +14,28 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html <?php print $html_attributes . $rdf_namespaces; ?>><!--<![endif]-->
 
 <head>
-  <?php
-    $pos = strpos($_SERVER['REQUEST_URI'],'/islandora/object/');
-    if ( $pos !== false ) {
-      $url = rtrim(strtok($_SERVER['REQUEST_URI'].'?','?'),'/');
-      $pid = urldecode(basename($url));
-      if ( strpos($pid,':') ) {
-        echo '<link rel="canonical" href="https://' . ( @empty($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['HTTP_X_FORWARDED_HOST'] );
-        // if on the main-site attach in front the institute taken from the pid:
-        echo ( empty($pos) ? '/'.strtok(strtr($pid,'-',':'),':') : '' ) . $url . '" />' . "\r\n";
-      }
-    }
-  ?>
-
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
 
-  <?php if ( $default_mobile_metatags && variable_get('libfourri_theme_cellphone_tuned',FALSE) ): /* the HandheldFriendly tag may be ignored by Google */ ?>
-    <meta name="MobileOptimized" content="width" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="viewport" content="width=device-width" />
-  <?php endif; ?>
+  <?php
+    if ( $default_mobile_metatags ) {
+      $url = rtrim(strtok($_SERVER['REQUEST_URI'].'?','?'),'/');
+      if ( variable_get('libfourri_theme_cellphone_tuned',FALSE) ) {
+        echo '  <meta name="MobileOptimized" content="width" />' . "\r\n";
+        echo '  <meta name="HandheldFriendly" content="true" />' . "\r\n"; /* the HandheldFriendly tag may be ignored by Google */
+        if ( !empty($url) || user_is_logged_in() ) { /* default values if not landing page */
+          echo '  <meta name="viewport" content="width=device-width" />' . "\r\n";
+        }
+      }
+      if ( empty($url) && !user_is_logged_in() ) { /* add viewport always for landing page only (for non-bots/users if not logged in yet) */
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+        $isBot = ( stripos($ua,'google') || stripos($ua,'bot') || stripos($ua,'crawl') || stripos($ua,'speed') || stripos($ua,'index') ); // rough check is ok here
+        if ( !$isBot && !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ) {
+          echo '  <meta name="viewport" content="width=device-width" />' . "\r\n";
+        }
+      }
+    }
+  ?>
   <!--[if IEMobile]><meta http-equiv="cleartype" content="on"><![endif]-->
 
   <?php print $styles; ?>
