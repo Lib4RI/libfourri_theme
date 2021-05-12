@@ -1885,7 +1885,7 @@ tr.selected td {
 **/
 /* line 5, ../sass/components/_header.scss */
 header {
-  border-bottom: 10px solid grey;
+  border-bottom: 10px solid #fff;
 }
 /* line 7, ../sass/components/_header.scss */
 header .header-inner-wrapper {
@@ -1992,7 +1992,7 @@ header .header-inner-wrapper .header__region #edit-simple input.form-submit {
 **/
 /* line 5, ../sass/components/_footer.scss */
 footer {
-  border-top: 10px solid grey;
+  border-top: 10px solid #fff;
 }
 /* line 8, ../sass/components/_footer.scss */
 footer .inner-footer-wrapper {
