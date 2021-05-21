@@ -601,11 +601,29 @@ table {
 
 /* Apply the shared properties of grid items in a single, efficient ruleset. */
 /* line 39, ../sass/layouts/_responsive.scss */
-#header,
 #content,
 #navigation,
 .region-sidebar-first,
-.region-sidebar-second,
+.region-sidebar-second {
+  padding-left: 18px;
+  padding-right: 18px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+#header {
+  padding-left: 18px;
+  padding-right: 18px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  border-bottom: 10px solid #5d5d5d;
+  margin-bottom: 0em;
+}
 #footer {
   padding-left: 18px;
   padding-right: 18px;
@@ -614,6 +632,7 @@ table {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
+  border-top: 10px solid #5d5d5d;
 }
 
 /* Containers for grid items and flow items. */
@@ -1885,7 +1904,8 @@ tr.selected td {
 **/
 /* line 5, ../sass/components/_header.scss */
 header {
-  border-bottom: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  margin-bottom: -1.25em;
 }
 /* line 7, ../sass/components/_header.scss */
 header .header-inner-wrapper {
@@ -1907,7 +1927,7 @@ header .header-inner-wrapper .header__region {
   vertical-align: middle;
   display: table-cell;
   text-align: right;
-}
+}d
 /* line 24, ../sass/components/_header.scss */
 header .header-inner-wrapper .header__region .block {
   margin-bottom: 0.5em;
@@ -1992,7 +2012,7 @@ header .header-inner-wrapper .header__region #edit-simple input.form-submit {
 **/
 /* line 5, ../sass/components/_footer.scss */
 footer {
-  border-top: 10px solid #fff;
+  border-top: 10px solid #grey;
 }
 /* line 8, ../sass/components/_footer.scss */
 footer .inner-footer-wrapper {
