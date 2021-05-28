@@ -1242,6 +1242,7 @@ header {
 
 /* line 237, ../sass/components/_misc.scss */
 h1.page__title {
+  margin-top: 0.875em;
   font-size: 1.5em;
 }
 
@@ -1905,7 +1906,7 @@ tr.selected td {
 /* line 5, ../sass/components/_header.scss */
 header {
   border-bottom: 10px solid transparent;
-  margin-bottom: -1.25em;
+  margin-bottom: -1.125em;
 }
 /* line 7, ../sass/components/_header.scss */
 header .header-inner-wrapper {
@@ -1927,7 +1928,7 @@ header .header-inner-wrapper .header__region {
   vertical-align: middle;
   display: table-cell;
   text-align: right;
-}d
+}
 /* line 24, ../sass/components/_header.scss */
 header .header-inner-wrapper .header__region .block {
   margin-bottom: 0.5em;
