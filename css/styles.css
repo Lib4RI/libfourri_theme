@@ -187,7 +187,7 @@ h1 {
 /* line 190, ../sass/_normalize.scss */
 h2 {
   font-size: 1.5em;
-  line-height: 2em;
+  line-height: 1.5em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -622,7 +622,7 @@ table {
   box-sizing: border-box;
   word-wrap: break-word;
   border-bottom: 10px solid #5d5d5d;
-  margin-bottom: 0em;
+  margin-bottom: 0.75em;
 }
 #footer {
   padding-left: 18px;
@@ -1242,7 +1242,7 @@ header {
 
 /* line 237, ../sass/components/_misc.scss */
 h1.page__title {
-  margin-top: 0.875em;
+  margin-top: 0em !important;
   font-size: 1.5em;
 }
 

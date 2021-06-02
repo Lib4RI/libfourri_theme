@@ -310,7 +310,9 @@ function libfourri_theme_add_secondaries($islandora_solr_query) {
   $path = current_path();
 
   // Parameters set in URL.
-  $params = $islandora_solr_query->internalSolrParams;
+  if ( @isset($islandora_solr_query->internalSolrParams) ) {
+    $params = $islandora_solr_query->internalSolrParams;
+  }
 
   // Get list of secondary displays.
   $secondary_array = variable_get('islandora_solr_secondary_display', array());
