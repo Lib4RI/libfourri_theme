@@ -2266,7 +2266,7 @@ footer .inner-footer-wrapper div.block-views .view-footer-logo img {
 
 /* line 25, ../sass/components/_collection_page.scss */
 table.islandora-bookmark-solr-results {
-  margin-top: -1.87em;
+  margin-top: -1.2em;
   box-sizing: border-box;
   margin-left: 5px;
   margin-right: 5px;
@@ -2275,6 +2275,8 @@ table.islandora-bookmark-solr-results {
 /* line 32, ../sass/components/_collection_page.scss */
 table.islandora-bookmark-solr-results thead th {
   border: none;
+  position: relative !important;
+  top: -0.75em !important;
 }
 /* line 36, ../sass/components/_collection_page.scss */
 table.islandora-bookmark-solr-results tbody {
@@ -2299,12 +2301,6 @@ table.islandora-bookmark-solr-results tr.even, table.islandora-bookmark-solr-res
 table.islandora-bookmark-solr-results tr.even, table.islandora-bookmark-solr-results tr.odd {
   background-color: transparent !important;
 }
-
-/* line 60, ../sass/components/_collection_page.scss */
-table.islandora-bookmark-solr-results {
-  margin-top: -2.4em\9;
-}
-
 /* line 64, ../sass/components/_collection_page.scss */
 .islandora-sort {
   text-align: center;
