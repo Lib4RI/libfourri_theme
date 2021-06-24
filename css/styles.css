@@ -633,6 +633,10 @@ table {
   box-sizing: border-box;
   word-wrap: break-word;
   border-top: 10px solid #5d5d5d;
+  background-color: #fff;
+}
+.inner-page-wrapper {
+  background-color: #f7f5f3;
 }
 
 /* Containers for grid items and flow items. */
