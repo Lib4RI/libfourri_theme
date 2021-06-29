@@ -2259,10 +2259,25 @@ footer .inner-footer-wrapper div.block-views .view-footer-logo img {
   width: 100% !important;
 }
 /* line 19, ../sass/components/_collection_page.scss */
+.object-mock-table-header .select-items  {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 19, ../sass/components/_collection_page.scss */
+.object-mock-table-header .object-mock-pager, .object-mock-table-header .object-mock-icons {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  z-index: 999;
+}
+
+/* line 19, ../sass/components/_collection_page.scss */
 .object-mock-table-header .select-items, .object-mock-table-header .object-mock-pager, .object-mock-table-header .object-mock-icons {
   display: table-cell;
   vertical-align: middle;
 }
+
 
 /* line 25, ../sass/components/_collection_page.scss */
 table.islandora-bookmark-solr-results {
