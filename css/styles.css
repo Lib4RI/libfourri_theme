@@ -3207,6 +3207,92 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
   margin-right: 8px;
 }
 
+#islandora-solr-advanced-fund1:before, #islandora-solr-advanced-fund1:after {
+  content: "";
+  display: table;
+}
+#islandora-solr-advanced-fund1:after {
+  clear: both;
+}
+#islandora-solr-advanced-fund1 .advanced-search-and {
+  float: left;
+  width: 28.57143%;
+  margin-left: 0%;
+  margin-right: -28.57143%;
+  padding-left: 2px;
+  padding-right: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  clear: left;
+}
+#islandora-solr-advanced-fund1 .field-outer-wrap {
+  float: left;
+  width: 71.42857%;
+  margin-left: 28.57143%;
+  margin-right: -100%;
+  padding-left: 2px;
+  padding-right: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.icon-image, #islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap input[value="+f1"], #islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap input[value="-f1"] {
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  text-indent: -9999px;
+  margin-right: 8px;
+}
+
+#islandora-solr-advanced-fund2:before, #islandora-solr-advanced-fund2:after {
+  content: "";
+  display: table;
+}
+#islandora-solr-advanced-fund2:after {
+  clear: both;
+}
+#islandora-solr-advanced-fund2 .advanced-search-and {
+  float: left;
+  width: 28.57143%;
+  margin-left: 0%;
+  margin-right: -28.57143%;
+  padding-left: 2px;
+  padding-right: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  clear: left;
+}
+#islandora-solr-advanced-fund2 .field-outer-wrap {
+  float: left;
+  width: 71.42857%;
+  margin-left: 28.57143%;
+  margin-right: -100%;
+  padding-left: 2px;
+  padding-right: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.icon-image, #islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap input[value="+f2"], #islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap input[value="-f2"] {
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  text-indent: -9999px;
+  margin-right: 8px;
+}
+
 /* line 21, ../sass/layouts/_advanced-search.scss */
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-pub-type > div,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-org-unit > div,
@@ -3464,6 +3550,74 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
   min-width: 30%;
 }
 #islandora-solr-advanced-search-form #islandora-solr-advanced-org2 > div.field-outer-wrap div.field-term-wrap > div select, #islandora-solr-advanced-search-form #islandora-solr-advanced-org2 > div.field-outer-wrap div.field-term-wrap > div input {
+  width: 100%;
+}
+
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap:before, #islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap:after {
+  content: "";
+  display: table;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap:after {
+  clear: both;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.advanced-search-and {
+  float: left;
+  width: 28.57143%;
+  margin-left: 0%;
+  margin-right: -28.57143%;
+  padding-left: 2px;
+  padding-right: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap input[value="+f1"] {
+  background: url('../images/add.png?1540992744');
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap input[value="-f1"] {
+  background: url('../images/rounded.png?1540992744');
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap > div {
+  margin-top: .25em;
+  min-width: 30%;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap > div select, #islandora-solr-advanced-search-form #islandora-solr-advanced-fund1 > div.field-outer-wrap div.field-term-wrap > div input {
+  width: 100%;
+}
+
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap:before, #islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap:after {
+  content: "";
+  display: table;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap:after {
+  clear: both;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.advanced-search-and {
+  float: left;
+  width: 28.57143%;
+  margin-left: 0%;
+  margin-right: -28.57143%;
+  padding-left: 2px;
+  padding-right: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap input[value="+f2"] {
+  background: url('../images/add.png?1540992744');
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap input[value="-f2"] {
+  background: url('../images/rounded.png?1540992744');
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap > div {
+  margin-top: .25em;
+  min-width: 30%;
+}
+#islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap > div select, #islandora-solr-advanced-search-form #islandora-solr-advanced-fund2 > div.field-outer-wrap div.field-term-wrap > div input {
   width: 100%;
 }
 
