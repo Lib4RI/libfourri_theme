@@ -85,10 +85,14 @@ dl.solr-fields
   float: left;
   margin: 5px 0;
   width: 3.3em;
+  font-weight:500;
 }
+
+/*
 .islandora-solr-date-filter label:after {
   content: ':';
 }
+*/
 
 .islandora-solr-date-filter input.form-submit,
 .islandora-solr-range-slider input.form-submit
