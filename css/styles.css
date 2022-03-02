@@ -3297,6 +3297,7 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-pub-type > div,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-org-unit > div,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div {
   width: 100%;
 }
@@ -3306,6 +3307,8 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-org-unit > div:after,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div:before,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div:after,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div:before,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div:after,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div:before,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div:after {
   content: "";
@@ -3315,6 +3318,7 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-pub-type > div:after,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-org-unit > div:after,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div:after,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div:after,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div:after {
   clear: both;
 }
@@ -3322,6 +3326,7 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-pub-type > div > label,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-org-unit > div > label,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div > label,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div > label,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div > label {
   float: left;
   width: 28.57143%;
@@ -3341,6 +3346,8 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-org-unit > div > select,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div > div,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-peer-review > div > select,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div > div,
+#islandora-solr-advanced-search-form #lib4ri-advanced-search-research-data > div > select,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div > div,
 #islandora-solr-advanced-search-form #lib4ri-advanced-search-full-text > div > select {
   float: left;
@@ -3623,8 +3630,13 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 
 /* line 40, ../sass/_mixins.scss */
 #islandora-solr-advanced-search-form .form-item-peer-review #edit-peer-review div,
+#islandora-solr-advanced-search-form .form-item-peer-review #edit-research-data div,
 #islandora-solr-advanced-search-form .form-item-peer-review #edit-full-text div,
+#islandora-solr-advanced-search-form .form-item-research-data #edit-peer-review div,
+#islandora-solr-advanced-search-form .form-item-research-data #edit-research-data div,
+#islandora-solr-advanced-search-form .form-item-research-data #edit-full-text div,
 #islandora-solr-advanced-search-form .form-item-full-text #edit-peer-review div,
+#islandora-solr-advanced-search-form .form-item-full-text #edit-research-data div,
 #islandora-solr-advanced-search-form .form-item-full-text #edit-full-text div {
   width: 33.33333%;
   box-sizing: border-box;
@@ -3634,8 +3646,13 @@ div.altmetric-embed img {		/* custom area size, to fit/press a possibly bigger A
 }
 /* line 47, ../sass/_mixins.scss */
 #islandora-solr-advanced-search-form .form-item-peer-review #edit-peer-review:after,
+#islandora-solr-advanced-search-form .form-item-peer-review #edit-research-data:after,
 #islandora-solr-advanced-search-form .form-item-peer-review #edit-full-text:after,
+#islandora-solr-advanced-search-form .form-item-research-data #edit-peer-review:after,
+#islandora-solr-advanced-search-form .form-item-research-data #edit-research-data:after,
+#islandora-solr-advanced-search-form .form-item-research-data #edit-full-text:after,
 #islandora-solr-advanced-search-form .form-item-full-text #edit-peer-review:after,
+#islandora-solr-advanced-search-form .form-item-full-text #edit-research-data:after,
 #islandora-solr-advanced-search-form .form-item-full-text #edit-full-text:after {
   display: table;
   content: " ";
