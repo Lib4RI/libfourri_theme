@@ -2607,6 +2607,30 @@ fieldset.islandora-metadata legend span {
   display: table-cell;
   width: 100%;
 }
+.form-item-date-filter-date-filter-from label {
+  min-width: 5ex;
+  margin: 1ex 0 .5ex 0;
+}
+.form-item-date-filter-date-filter-to label {
+  min-width: 5ex;
+  margin: 1ex 0 .5ex 0;
+}
+.form-type-select.form-item-date-filter-date-filter-from {
+  margin: 1ex 6ex .5ex 0;
+  display: inline-block;
+  white-space: nowrap;
+}
+.form-type-select.form-item-date-filter-date-filter-to {
+  margin: 1ex 6ex .5ex 0;
+  display: inline;
+  white-space: nowrap;
+}
+.islandora-solr-range-slider .date-range-slider-gap {
+  display: none;
+}
+.islandora-solr-date-filter .description {
+  display: none;
+}
 /* line 35, ../sass/components/_facets.scss */
 .islandora-solr-facet-wrapper .islandora-solr-facet span.plusminus {
   float: left;
